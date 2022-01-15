@@ -1,0 +1,1 @@
+# photographic_inventory_4Moradauno
