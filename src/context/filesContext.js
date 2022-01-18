@@ -6,11 +6,11 @@ export const FilesProvider = (props) => {
     const [pollo, setPollo] =useState()
 
     return(
-        <FilesProvider.Provider value ={{
+        <FilesContext.Provider value ={{
             pollo,
             setPollo
         }}>
-            {props}
-        </FilesProvider.Provider>
+            {props.children}
+        </FilesContext.Provider>
     )
 }

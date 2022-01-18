@@ -5,9 +5,13 @@ import './App.css';
 
 function App() {
   return (
-    <FilesProvider>
+    
+      <>
+      <FilesProvider>
       <h1>Hola morada uno</h1>
-    </FilesProvider>
+      </FilesProvider>
+      </>   
+    
   );
 }
 
