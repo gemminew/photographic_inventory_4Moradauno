@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,39 @@
   to {
     transform: rotate(360deg);
   }
+} */
+#containerHeader{
+  
+  
 }
+ h1 {
+  
+  border-bottom-style:solid;
+  border-color:purple;  
+  border-width:9px;
+ }
+
+ img{
+  display:block;
+  margin:auto;
+ }
+ .LogOut{
+  background-color: white;
+  color:#1abbbf;
+ font-size: 20px;
+  border-color: #1abbbf;
+  border-radius: 60px; 
+  height: 50px;
+  width: 250px;
+  font-family: 'M PLUS 1p', sans-serif;
+ }
+ .addItem{
+  background-color: white;
+  color:#1abbbf;
+  font-size: 20px;
+  border-color: white;
+
+ 
+  height: 50px;
+  width: 250px;
+ }
