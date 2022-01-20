@@ -1,25 +1,32 @@
-import React  from 'react'
-/* import './main.css' */
-import FilesProvider from '../../Context/filesContext'
+import React, { useContext }  from 'react'
+
+import {FilesContext} from '../../context/filesContext'
+import {
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut,
+} from "firebase/auth";
+import { auth } from "../../Firebase/config";
+
+import Login from '../Login/Login'
+import Home from '../Home/Home'
 
 function Main() {
+    const {user, setUser} = useContext(FilesContext)
+
+    onAuthStateChanged(auth, (currentUser) => {
+      if (currentUser){
+        setUser(currentUser);
+      } else {
+        setUser(null)
+      }
+      
+    });
+
     return (
-      <FilesProvider>
-        <div id= "allContainer">
-         <div id="containerHeader">
-           <img src="images/moradalogo.png" alt="moradalogo" width="40%"/>
-           {/* <button className="LogOut" type="submit" >Cerrar sesión</button> */}
-           <img src="images/menu.png" alt="moradamenu" width="30%"/>
-           {/* <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap" rel="stylesheet"></link> */}
-        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400&display=swap" rel="stylesheet"></link>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0" />
-         </div>
-         <body>
-           <br></br>
-         <button className="addItem" type="submit" >Añadir nuevo registro</button>
-         </body>
-         </div>
-      </FilesProvider>
+      <>
+        {}
+      </>
     );
   }
   

@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import Login from './components/Login/Login'
-import  FilesProvider  from './Context/filesContext'
+import { FilesProvider } from './context/filesContext'
 import Stepper from './components/Stepper';
 import Main from './components/Main/Main'
 
