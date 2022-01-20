@@ -4,7 +4,7 @@ export const FilesContext = createContext();
 
 export default function FilesProvider (props) {
     const [pollo, setPollo] =useState()
-    const [user, setUser] = useState("");
+    const [user, setUser] = useState(null);
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
 

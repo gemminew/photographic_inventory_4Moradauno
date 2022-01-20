@@ -6,12 +6,13 @@ import {
 } from "firebase/auth";
 import { auth } from "../../Firebase/config";
 import { FilesContext } from "../../Context/filesContext"
+import Checkout from "../Stepper"
 
 const Login = () => {
-/*   const [loginEmail, setLoginEmail] = useState("");
-  const [loginPassword, setLoginPassword] = useState("");
+/*  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const [user, setUser] = useState({}); */
+  const [user, setUser] = useState({}); */ 
 
   const {user, setUser, email, setEmail, password, setPassword} = useContext(FilesContext);
 
@@ -19,14 +20,15 @@ const Login = () => {
     setUser(currentUser);
   });
 
-  const login = async () => {
+  const login = async (e) => {
+    e.preventDefault();
     try {
       const user = await signInWithEmailAndPassword(
         auth,
         email,
         password
       );
-      console.log(user);
+      console.log(setUser);
     } catch (error) {
       console.log(error.message);
     }
@@ -46,6 +48,7 @@ const Login = () => {
       <input type="text"  placeholder="ej. example@gmail.com"
                 onChange={(event) => {
                   setEmail(event.target.value);
+                  console.log(email)
                 }}/>
       <h2>Inmobiliaria</h2>
       <input type="text" placeholder = "ej. Mi casa " />
@@ -53,13 +56,16 @@ const Login = () => {
      <input className ="input-login" id="contraseña" type="password" name="password" placeholder="**********"
                onChange={(event) => {
                 setPassword(event.target.value);
+              
               }}
      />
       <button onClick={login}> Iniciar Sesion </button>
 
       <h4> Usuario </h4>
+      {user?.rol}
       {user?.email}
-
+    {/*   {user? <Checkout/> : <Login/>} */}
+      
       <button onClick={logout}> Saquese </button>
     </form>
     </div>
