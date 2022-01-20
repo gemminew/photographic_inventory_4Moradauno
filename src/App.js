@@ -1,8 +1,10 @@
-import React, {useState} from 'react'
-import Login from './components/Login/Login'
-import  FilesProvider  from './Context/filesContext'
-import Stepper from './components/Stepper';
+import React from 'react'
+// import {useState} from 'react'
+// import Login from './components/Login/Login'
+import  FilesProvider  from './context/filesContext'
+// import Stepper from './components/Stepper';
 import PersistentDrawerRight from './components/Main/Main'
+import BasicModal from './Modal/Modal';
 
 
 function App() {
@@ -10,7 +12,8 @@ function App() {
 
   return (
     <FilesProvider>
-      <PersistentDrawerRight></PersistentDrawerRight>
+      {/* <PersistentDrawerRight></PersistentDrawerRight> */}
+      <BasicModal/> 
       <h1>Morada uno</h1>
     </FilesProvider>
   );
