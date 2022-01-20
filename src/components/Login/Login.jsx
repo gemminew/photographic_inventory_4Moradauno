@@ -1,4 +1,6 @@
 import React, { useState, useContext } from "react";
+//import { useNavigate } from "react-router-dom";
+import '../Login/Login.css'
 import {
   signInWithEmailAndPassword,
   onAuthStateChanged,
@@ -8,7 +10,9 @@ import { auth } from "../../Firebase/config";
 import { FilesContext } from "../../Context/filesContext"
 import Checkout from "../Stepper"
 
+
 const Login = () => {
+  //const navigate = useNavigate();
 /*  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -29,6 +33,7 @@ const Login = () => {
         password
       );
       console.log(setUser);
+      //navigate("main")
     } catch (error) {
       console.log(error.message);
     }
@@ -38,20 +43,16 @@ const Login = () => {
     await signOut(auth);
   };
   return (
-    <div>
-      <div>
+    <div className ='login-container'  >
+      <div className ='login-tittle'>
         <h1> Ingresa aqui </h1>
-    <form action="">
-      <h2>Nombre</h2>
-      <input type="text" placeholder = " Susana Garcia " />
+    <form className="login-form" action="">
       <h2 >Correo Electronico</h2>
       <input type="text"  placeholder="ej. example@gmail.com"
                 onChange={(event) => {
                   setEmail(event.target.value);
                   console.log(email)
                 }}/>
-      <h2>Inmobiliaria</h2>
-      <input type="text" placeholder = "ej. Mi casa " />
       <h2 className ="text-login" > Contraseña </h2>
      <input className ="input-login" id="contraseña" type="password" name="password" placeholder="**********"
                onChange={(event) => {
@@ -66,7 +67,7 @@ const Login = () => {
       {user?.email}
     {/*   {user? <Checkout/> : <Login/>} */}
       
-      <button onClick={logout}> Saquese </button>
+      <button onClick={logout}> Salir </button>
     </form>
     </div>
     </div>

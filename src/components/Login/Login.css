@@ -1,0 +1,10 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.login-form{
+    background-color: #5B1A6C;
+    width: 50%;
+    height: 60%;
+}
