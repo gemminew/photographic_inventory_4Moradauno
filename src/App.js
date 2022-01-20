@@ -8,7 +8,6 @@ import PersistentDrawerRight from './components/Main/Main';
 
 
 function App() {
- //const [user, setUser] = useState(null);
 
   return (
     <FilesProvider>

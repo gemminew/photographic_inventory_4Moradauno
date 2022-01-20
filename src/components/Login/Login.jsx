@@ -7,7 +7,7 @@ import {
   signOut,
 } from "firebase/auth";
 import { auth } from "../../Firebase/config";
-import { FilesContext } from "../../Context/filesContext"
+import { FilesContext } from "../../context/filesContext"
 import Checkout from "../Stepper"
 
 
@@ -20,9 +20,7 @@ const Login = () => {
 
   const {user, setUser, email, setEmail, password, setPassword} = useContext(FilesContext);
 
-  onAuthStateChanged(auth, (currentUser) => {
-    setUser(currentUser);
-  });
+
 
   const login = async (e) => {
     e.preventDefault();
