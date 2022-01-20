@@ -15,17 +15,17 @@ const firebaseConfig = {
 };
 
 
-export const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth(app)
 export const firestore = getFirestore(app)
 export const storage = getStorage(app)
 
-export {
+/* export {
     auth,
     firestore,
     storage
-}
+} */
 
 
 //METODOS DE FIREBASE PARA CADA SERVICIO
