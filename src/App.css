@@ -35,4 +35,57 @@
   to {
     transform: rotate(360deg);
   }
+} 
+
+#containerHeader{
+  border-bottom-style:solid;
+  border-color:purple;  
+  border-width:9px;
+  /* background-color: gray; */
+  
 }
+ img{
+  display:block;
+  /* margin:auto; */
+  width:50%;
+  
+  
+ }
+ .LogOut{
+  background-color: white;
+  color:#1abbbf;  
+ font-size: 20px;
+  border-color: #1abbbf;
+  border-radius: 60px; 
+  height: 50px;
+  width: 250px;
+  font-family: 'M PLUS 1p', sans-serif;
+  float:right;
+  margin-right:15px;
+  margin-top: -7%;
+  /* width:15%; */
+  
+  
+
+
+ }
+ .addItem{
+  background-color: white;
+  color:#1abbbf;
+  font-size: 20px;
+  border-color: white;
+  height: 50px;
+  width: 250px;
+ }
+ @media screen and (max-width: 800px){
+  .LogOut{
+    width:30%;
+    margin-top: -10%;
+    height: 30%;
+    font-size:15px;
+  }
+  img{
+    width:60%;
+  }
+
+ }
