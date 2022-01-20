@@ -1,12 +1,14 @@
 import React from 'react'
-import Login from './Login/Login'
+import Login from './components/Login/Login'
 import  FilesProvider  from './Context/filesContext'
-import './App.css';
+import Stepper from './components/Stepper';
+
 
 function App() {
   return (
     <FilesProvider>
       <Login></Login>
+      <Stepper></Stepper>
       <h1>Morada uno</h1>
     </FilesProvider>
   );

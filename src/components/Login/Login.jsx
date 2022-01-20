@@ -4,8 +4,8 @@ import {
   onAuthStateChanged,
   signOut,
 } from "firebase/auth";
-import { auth } from "../Firebase/config";
-import { FilesContext } from "../Context/filesContext"
+import { auth } from "../../Firebase/config";
+import { FilesContext } from "../../Context/filesContext"
 
 const Login = () => {
 /*   const [loginEmail, setLoginEmail] = useState("");
