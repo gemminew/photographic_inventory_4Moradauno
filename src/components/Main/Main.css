@@ -4,15 +4,14 @@
     border-color:purple;  
     border-width:9px;
     /* background-color: gray; */
-    
   }
+
    img{
     display:block;
     /* margin:auto; */
     width:50%;
-    
-    
    }
+
    .LogOut{
     background-color: white;
     color:#1abbbf;  
@@ -26,11 +25,8 @@
     margin-right:15px;
     margin-top: -7%;
     /* width:15%; */
-    
-    
-  
-  
    }
+
    .addItem{
     background-color: white;
     color:#1abbbf;
@@ -39,6 +35,7 @@
     height: 50px;
     width: 250px;
    }
+   
    @media screen and (max-width: 800px){
     .LogOut{
       width:30%;
