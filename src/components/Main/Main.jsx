@@ -2,9 +2,7 @@ import React, { useContext }  from 'react'
 
 import {FilesContext} from '../../context/filesContext'
 import {
-  signInWithEmailAndPassword,
   onAuthStateChanged,
-  signOut,
 } from "firebase/auth";
 import { auth } from "../../Firebase/config";
 
@@ -25,7 +23,7 @@ function Main() {
 
     return (
       <>
-        {}
+        {user ? <Home/> : <Login/>}
       </>
     );
   }

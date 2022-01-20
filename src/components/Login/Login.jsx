@@ -16,9 +16,7 @@ const Login = () => {
 
   const {user, setUser, email, setEmail, password, setPassword} = useContext(FilesContext);
 
-  onAuthStateChanged(auth, (currentUser) => {
-    setUser(currentUser);
-  });
+
 
   const login = async (e) => {
     e.preventDefault();

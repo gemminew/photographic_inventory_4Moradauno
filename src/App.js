@@ -1,18 +1,28 @@
 import React, {useState} from 'react'
-import Login from './components/Login/Login'
-import { FilesProvider } from './context/filesContext'
-import Stepper from './components/Stepper';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from 'react-router-dom';
+
 import Main from './components/Main/Main'
+import Header from './components/Header/Header'
+
+import { FilesProvider } from './context/filesContext'
+
 
 
 function App() {
- const [user, setUser] = useState(null);
 
   return (
-    <FilesProvider>
-      {user ? <Stepper/> : <Login />}      
-      <h1>Morada uno</h1>
-    </FilesProvider>
+    <Router>
+      <FilesProvider>
+        <Header/>
+        <Routes>
+        <Route path="/" element={<Main/>} />
+        </Routes>
+      </FilesProvider>
+    </Router>
   );
 }
 
