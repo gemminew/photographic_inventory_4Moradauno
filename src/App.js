@@ -7,8 +7,9 @@ import {
 
 import Main from './components/Main/Main'
 import Header from './components/Header/Header'
-import { FilesProvider } from './Context/filesContext'
+import Footer from './components/Footer/Footer'
 
+import { FilesProvider } from './context/filesContext'
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Routes>
         <Route path="/" element={<Main/>} />
         </Routes>
+        
       </FilesProvider>
     </Router>
   );

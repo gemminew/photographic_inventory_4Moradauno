@@ -1,0 +1,24 @@
+.header{
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: solid 5px purple;
+}
+
+.header__logo{
+    height: 30px;
+    margin-left: 50px;
+}
+
+.header__logout{
+    height: 30px;
+    width: 80px;
+    margin-right: 50px;
+    background-color: white;
+    border-radius: 20px;
+    border: 3px solid aquamarine;
+    color: aquamarine;
+    font-weight: bold;
+}
