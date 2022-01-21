@@ -1,4 +1,4 @@
-/* import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import { db } from "./firebase-config";
 import {
@@ -10,7 +10,7 @@ import {
   doc,
 } from "firebase/firestore";
 
-function App() {
+function CRUD() {
   const [newImage, setNewImage] = useState([]);
   const imagesCollectionRef = collection(db, "contratos");
   const [isBroker, setIsBroker] = useState(null);
@@ -41,7 +41,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="CRUD">
       <input
       type = "file"
         placeholder="."
@@ -85,4 +85,4 @@ function App() {
   );
 }
 
-export default App; */
+export default CRUD; 
