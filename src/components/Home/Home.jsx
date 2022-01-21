@@ -1,7 +1,7 @@
 import React, {useContext, useEffect} from 'react';
 
 import {firestore} from '../../Firebase/config'
-import {FilesContext} from '../../context/filesContext'
+import {FilesContext} from '../../Context/filesContext'
 
 import { doc, getDoc } from 'firebase/firestore'
 
