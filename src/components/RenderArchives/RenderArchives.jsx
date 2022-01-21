@@ -3,6 +3,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import {FilesContext} from '../../Context/filesContext'
+import ImgUp from '../UploadFiles/ImgUp'
 
 export default function RenderArchives() {
    
@@ -20,8 +21,8 @@ export default function RenderArchives() {
     <div>
       <h2>Por favor, verifica que estás feliz con las fotos que subiste</h2>
       <p>En caso de que necesites borrar alguna, vuelve al paso anterior</p>
-    </div>  
-    <Box sx={{ maxWidth: 480, bgcolor: 'background.paper' }}>
+    </div> 
+ <Box sx={{ maxWidth: 480, bgcolor: 'background.paper' }}>
       <Tabs
         value={value}
         onChange={handleChange}
@@ -37,7 +38,7 @@ export default function RenderArchives() {
         <Tab label="Cocina" />
         <Tab label="Otros" />
       </Tabs>
-    </Box>
+    </Box> 
     </>
   );
 }

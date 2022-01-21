@@ -13,7 +13,7 @@ export default function SearchContract() {
       <Typography variant="h6" gutterBottom>
       </Typography>
       <Grid container spacing={3}>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={12}>
           <TextField
             required
             id="numeroContrato"
@@ -26,7 +26,7 @@ export default function SearchContract() {
         </Grid>
         <Typography variant="h6" gutterBottom>
       </Typography>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={12}>
           <TextField
             required
             id="nombrePropiedad"
