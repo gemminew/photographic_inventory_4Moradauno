@@ -43,9 +43,9 @@ export default function ModalInstructivo() {
   const handleClose = () => setOpen(false);
 
   return (
-    <div class="aiuda">
+    <div className="aiuda">
       
-      <button class="buttonModal" type="buttonModal" onClick={handleOpen}>
+      <button className="buttonModal" type="buttonModal" onClick={handleOpen}>
       Guia de imagenes
       </button>
       <StyledModal

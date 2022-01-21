@@ -1,4 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react';
+import { Link } from 'react-router-dom'
 
 import {firestore} from '../../Firebase/config'
 import { FilesContext } from '../../context/filesContext'
@@ -63,7 +64,7 @@ function Home() {
                 <StyledEngineProvider injectFirst>
                 <ModalGaleria />
                 </StyledEngineProvider>
-            <a href="url">Ver las fotos</a>
+                <Link to="/section" ><a href="url">Ver las fotos</a></Link>
             </section>
             </section>
             </section>
