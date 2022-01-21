@@ -1,6 +1,6 @@
 import React, { useContext }  from 'react'
 
-import {FilesContext} from '../../Context/filesContext'
+import { FilesContext } from '../../context/filesContext'
 
 import {
   onAuthStateChanged,

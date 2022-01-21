@@ -1,13 +1,8 @@
 import React, { useState, useContext } from "react";
-//import { useNavigate } from "react-router-dom";
 import '../Login/Login.css'
-import {
-  signInWithEmailAndPassword,
-  onAuthStateChanged,
-  signOut,
-} from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../Firebase/config";
-import { FilesContext } from "../../Context/filesContext";
+import { FilesContext } from '../../context/filesContext'
 import Checkout from "../Stepper"
 
 
