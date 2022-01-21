@@ -1,0 +1,25 @@
+#buttonModalGaleria{
+    background-color: white;
+    color:#1ABBBF;
+    border: none;
+    text-decoration: underline;
+ }
+
+ #buttonModalInstructivo{
+    background-color: white;
+    color:#1ABBBF;
+    border: none;
+    text-decoration: underline;
+   
+ }
+
+.aiuda{
+        display: flex;
+        margin-top: 2em;
+        width: -webkit-fill-available;
+        justify-content: center;
+} 
+
+.buttonModal{
+    
+}

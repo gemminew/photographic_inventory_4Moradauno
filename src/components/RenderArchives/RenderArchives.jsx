@@ -2,11 +2,11 @@ import React, {useContext} from 'react';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
-import { FilesContext } from '../../context/filesContext'
+import {FilesContext} from '../../Context/filesContext'
 
 export default function RenderArchives() {
    
-  const {seccion, setSeccion} = useContext(FilesContext)
+  const {} = useContext(FilesContext)
 
   const [value, setValue] = React.useState(0);
 
@@ -29,22 +29,36 @@ export default function RenderArchives() {
         scrollButtons="auto"
         aria-label="scrollable auto tabs example"
       >
-        <Tab label="Estancia" onChange={(event) => {
-                  setSeccion(event.target.value);  }} />
-        <Tab label="Comedor" onChange={(event) => {
-                  setSeccion(event.target.value);  }}/>
-        <Tab label="Sala" onChange={(event) => {
-                  setSeccion(event.target.value);  }} />
-        <Tab label="Habitación" onChange={(event) => {
-                  setSeccion(event.target.value);  }}/>
-        <Tab label="Baño" onChange={(event) => {
-                  setSeccion(event.target.value);  }} />
-        <Tab label="Cocina" onChange={(event) => {
-                  setSeccion(event.target.value);  }}/>
-        <Tab label="Otros" onChange={(event) => {
-                  setSeccion(event.target.value);  }} />
+        <Tab label="Estancia" />
+        <Tab label="Comedor" />
+        <Tab label="Sala" />
+        <Tab label="Habitación" />
+        <Tab label="Baño" />
+        <Tab label="Cocina" />
+        <Tab label="Otros" />
       </Tabs>
     </Box>
     </>
   );
 }
+
+//import comedor from "../Assets/comedor.jpg";
+
+/* const RenderArchives = () => {
+
+  return (
+    <>
+    <h1>Categorias</h1>
+    <div>
+      <h1>Categorias</h1>
+      <div>
+        <h2>Por favor, verifica que estás feliz con las fotos que subiste</h2>
+        <p>En caso de que necesites borrar alguna, vuelve al paso anterior</p>
+
+
+      </div>
+    </div>
+  );
+}
+
+export default RenderArchives; */
