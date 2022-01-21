@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { styled, Box } from '@mui/system';
 import ModalUnstyled from '@mui/base/ModalUnstyled';
+import camara from '../Assets/camara.png'
 
 const StyledModal = styled(ModalUnstyled)`
   position: fixed;
@@ -35,14 +36,15 @@ const style = {
   pb: 3,
 };
 
-export default function ModalUnstyledDemo() {
+export default function ModalInstructivo() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   return (
     <div>
-      <button type="button" onClick={handleOpen}>
+      
+      <button id="buttonModal" type="buttonModal" onClick={handleOpen}>
         Guia de fotos
       </button>
       <StyledModal
@@ -53,7 +55,7 @@ export default function ModalUnstyledDemo() {
         BackdropComponent={Backdrop}
       >
         <Box sx={style}>
-        <img src="images/camara.png" alt="camara"  />
+        <img src={camara} alt="camara" />
 
           <h2 id="unstyled-modal-title">Consideraciones que deben cumplir tus fotografias.</h2>
           <p>Hacer las fotos en días soleados y a las horas centrales del día para evitar sombras,  enciende todas las luces disponibles.

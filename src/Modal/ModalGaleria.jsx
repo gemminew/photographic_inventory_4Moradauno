@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { styled, Box } from '@mui/system';
 import ModalUnstyled from '@mui/base/ModalUnstyled';
+import camara from '../Assets/camara.png'
 
 const StyledModal = styled(ModalUnstyled)`
   position: fixed;
@@ -41,8 +42,9 @@ export default function ModalGaleria() {
   const handleClose = () => setOpen(false);
 
   return (
-    <div>
-      <button type="button" onClick={handleOpen}>
+    <div >
+        <p>hola</p>
+      <button id="buttonModal" type="buttonModal" onClick={handleOpen}>
        Ver Galeria
       </button>
       <StyledModal
@@ -53,7 +55,7 @@ export default function ModalGaleria() {
         BackdropComponent={Backdrop}
       >
         <Box sx={style}>
-        <img src="images/camara.png" alt="camara"  />
+        <img src={camara} alt="camara" />
 
           <h2 id="unstyled-modal-title">Aqui se mostrarán las fotos del inmueble</h2>
          
