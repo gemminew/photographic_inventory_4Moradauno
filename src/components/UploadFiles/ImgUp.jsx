@@ -10,7 +10,10 @@ export default function ImgUp () {
     <h1 id='categoria'>Categorias  </h1>
     <LabelBottomNavigation/>
     <h1 id='imagenes'>Imagenes</h1>
-    <input id='imgUp' type="file" accept="image/*" capture="camera"></input>
+    <label for="file-upload" class="custom-file-upload">
+    Subir Imagen 
+</label>
+    <input id="file-upload" type="file" accept="image/*" capture="camera"></input>
     <div id='divBoton'>
     <button id='guardar'>Guardar</button>
     <button id='enviar'>Enviar</button>

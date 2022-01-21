@@ -1,6 +1,6 @@
 #div21{
 display: flex; 
-
+margin: 30em;
 justify-content: center;
     align-items: center;
 }
@@ -72,4 +72,25 @@ border-radius: 30px;
     
     background: #7E288B;
     border-radius: 30px;
+}
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-family: M PLUS 1;
+    font-style: normal;
+    font-weight: 40;
+    font-size: 20px;
+    line-height: 52px;
+
+    background: #FFFFFF;
+    border: 8px solid #1ABBBF;
+    box-sizing: border-box;
+    border-radius: 15px;
+    color: #1ABBBF;
+    
 }
