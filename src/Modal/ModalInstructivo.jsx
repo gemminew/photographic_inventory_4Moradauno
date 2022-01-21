@@ -2,6 +2,7 @@ import * as React from 'react';
 import { styled, Box } from '@mui/system';
 import ModalUnstyled from '@mui/base/ModalUnstyled';
 import camara from '../Assets/camara.png'
+import './Modal.css'
 
 const StyledModal = styled(ModalUnstyled)`
   position: fixed;
@@ -44,8 +45,8 @@ export default function ModalInstructivo() {
   return (
     <div>
       
-      <button id="buttonModal" type="buttonModal" onClick={handleOpen}>
-        Guia de fotos
+      <button id="buttonModalInstructivo" type="buttonModal" onClick={handleOpen}>
+        Guia de imagenes
       </button>
       <StyledModal
         aria-labelledby="unstyled-modal-title"

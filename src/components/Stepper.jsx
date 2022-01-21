@@ -31,7 +31,7 @@ function Copyright() {
 
 const steps = ['Buscar contrato', 'Subir fotos', 'Revisar fotos'];
 
-function getStepContent(step) {
+function GetStepContent(step) {
   switch (step) {
     case 0:
       return <SearchContract/>;
@@ -100,7 +100,7 @@ export default function Checkout() {
               </React.Fragment>
             ) : (
               <React.Fragment>
-                {getStepContent(activeStep)}
+                {GetStepContent(activeStep)}
                 <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
                   {activeStep !== 0 && (
                     <Button onClick={handleBack} sx={{ mt: 3, ml: 1 }}>

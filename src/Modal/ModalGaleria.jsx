@@ -13,7 +13,6 @@ const StyledModal = styled(ModalUnstyled)`
   display: flex;
   align-items: center;
   justify-content: center;
-
 `;
 
 const Backdrop = styled('div')`
@@ -42,9 +41,8 @@ export default function ModalGaleria() {
   const handleClose = () => setOpen(false);
 
   return (
-    <div >
-       
-      <button id="buttonModal" type="buttonModal" onClick={handleOpen}>
+    <div>
+      <button id="buttonModalGaleria" type="button" onClick={handleOpen}>
        Ver Galeria
       </button>
       <StyledModal
@@ -56,6 +54,7 @@ export default function ModalGaleria() {
       >
         <Box sx={style}>
         <img src={camara} alt="camara" />
+
 
           <h2 id="unstyled-modal-title">Aqui se mostrarán las fotos del inmueble</h2>
          

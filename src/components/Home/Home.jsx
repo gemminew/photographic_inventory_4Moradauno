@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react';
 
 import {firestore} from '../../Firebase/config'
-import {FilesContext} from '../../context/filesContext'
+import {FilesContext} from '../../Context/filesContext'
 
 import { doc, getDoc } from 'firebase/firestore'
 import './Home.css'
@@ -50,10 +50,12 @@ function Home() {
     return (
         <>
             <h1>Home</h1>
+            <ModalGaleria/>
+            {/* <ModalInstructivo handleOpen={handleOpen} handleClose={handleClose}/> */}
             <section class="home-container">
             <section class="left-container">
                 <h3>Casa Lomas</h3>
-                <p>Contrato: 31416</p> 
+                <p>Contrato: 31416</p>  
                 <p>Pendiente de aprobación</p>
             </section>
             <section class="right-contains">
@@ -62,7 +64,7 @@ function Home() {
             </section>
             <section>
             <StyledEngineProvider injectFirst>
-    <ModalGaleria />
+    <ModalGaleria/>
   </StyledEngineProvider>,
 
             {/* <ModalGaleria = {ModalGaleria}></ModalGaleria> */}
