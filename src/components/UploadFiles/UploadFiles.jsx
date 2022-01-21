@@ -9,7 +9,7 @@ export default function UploadFiles() {
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
-        Payment method
+        Subir archivo
       </Typography>
       <Grid container spacing={3}>
         <Grid item xs={12} md={6}>
