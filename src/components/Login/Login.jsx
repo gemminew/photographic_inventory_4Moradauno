@@ -7,7 +7,7 @@ import {
   signOut,
 } from "firebase/auth";
 import { auth } from "../../Firebase/config";
-import { FilesContext } from "../../context/filesContext"
+import { FilesContext } from "../../Context/filesContext";
 import Checkout from "../Stepper"
 
 

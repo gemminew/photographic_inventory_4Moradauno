@@ -12,7 +12,6 @@ import Footer from './components/Footer/Footer'
 import { FilesProvider } from './context/filesContext'
 
 
-
 function App() {
 
   return (
