@@ -1,0 +1,30 @@
+.home-container{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    margin: 2em 2em;
+}
+
+.left-container h3{
+    font-family: M PLUS 1;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 70px;
+
+    color: #7E288B;
+}
+.right-contains{
+    display: inline-grid;
+}
+
+.right-container{
+    background: url(../../Assets/Logo.png);
+    background-size: contain;
+    
+    
+}
+
+.right-container a {
+
+
+}
