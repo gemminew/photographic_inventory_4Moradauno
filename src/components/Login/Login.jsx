@@ -12,11 +12,6 @@ import Checkout from "../Stepper"
 
 
 const Login = () => {
-  //const navigate = useNavigate();
-/*  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const [user, setUser] = useState({}); */ 
 
   const {user, setUser, email, setEmail, password, setPassword} = useContext(FilesContext);
 
@@ -25,21 +20,16 @@ const Login = () => {
   const login = async (e) => {
     e.preventDefault();
     try {
-      const user = await signInWithEmailAndPassword(
+      await signInWithEmailAndPassword(
         auth,
         email,
         password
       );
-      console.log(setUser);
-      //navigate("main")
     } catch (error) {
       console.log(error.message);
     }
   };
 
-  const logout = async () => {
-    await signOut(auth);
-  };
   return (
     <div className ='login-container'  >
       <div className ='login-tittle'>
@@ -60,13 +50,10 @@ const Login = () => {
      />
       <button onClick={login}> Iniciar Sesion </button>
 
-      <h4> Usuario </h4>
-      {user?.rol}
-      {user?.email}
-    {/*   {user? <Checkout/> : <Login/>} */}
+     
+
       
-      <button onClick={logout}> Salir </button>
-    </form>
+      </form>
     </div>
     </div>
   );

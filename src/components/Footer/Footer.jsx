@@ -1,7 +1,7 @@
 import React  from 'react'
-import Logo from '../Assets/Logo.png'
-import Instagram from '../Assets/Instagram.png'
-import Facebook from '../Assets/Facebook.png'
+import Logo from '../../Assets/Logo.png'
+import Instagram from '../../Assets/Instagram.png'
+import Facebook from '../../Assets/Facebook.png'
 import {makeStyles} from '@material-ui/core/styles'
 
 const useStyle = makeStyles({
@@ -49,6 +49,7 @@ const useStyle = makeStyles({
   },
 
 })
+
 export default function Footer() {
     const classes = useStyle()
     return(
@@ -82,4 +83,4 @@ export default function Footer() {
             </div>
         </>
     )
-}
+} 
