@@ -92,5 +92,12 @@ input[type="file"] {
     box-sizing: border-box;
     border-radius: 15px;
     color: #1ABBBF;
-    
+}
+@media (max-width: 600px){
+    .render-tittle1{
+        font-size: 9px;
+    }
+    .render-tittle1{
+        font-size: 9px;
+    }
 }
