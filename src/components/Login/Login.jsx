@@ -42,7 +42,7 @@ const Login = () => {
   };
   return (
     <div className ='login-container'  >
-      <div className ='login-tittle'>
+      <div className ='login-title'>
         <h1> Ingresa aqui </h1>
     <form className="login-form" action="">
       <h2 >Correo Electronico</h2>
