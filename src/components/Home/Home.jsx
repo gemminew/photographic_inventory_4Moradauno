@@ -5,6 +5,8 @@ import {FilesContext} from '../../Context/filesContext'
 
 import { doc, getDoc } from 'firebase/firestore'
 import './Home.css'
+import ModalGaleria from '../Modales/ModalGaleria';
+import { StyledEngineProvider } from '@mui/material/styles';
 
 function Home() {
 
@@ -58,6 +60,9 @@ function Home() {
            
             </section>
             <section>
+                <StyledEngineProvider injectFirst>
+                <ModalGaleria />
+                </StyledEngineProvider>
             <a href="url">Ver las fotos</a>
             </section>
             </section>
