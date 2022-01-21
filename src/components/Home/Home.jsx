@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 
 import {firestore} from '../../Firebase/config'
 import {FilesContext} from '../../context/filesContext'
@@ -8,9 +8,10 @@ import { doc, getDoc } from 'firebase/firestore'
 function Home() {
 
     const {user, infoUser, setInfoUser, propiedades, setPropiedades} = useContext(FilesContext)
+    const [infoPropiedad, setInfoPropiedad] = useState()
 
-    async function infoUsuario (idDocumento) {
-        const docuRef= doc(firestore, `usuarios/${idDocumento}`)
+    async function infoUsuario (coleccion, idDocumento) {
+        const docuRef= doc(firestore, `${coleccion}/${idDocumento}`)
         const consulta = await getDoc(docuRef)
         const infoDocu = consulta.data();
         return infoDocu
@@ -18,35 +19,33 @@ function Home() {
 
     useEffect(() => {
         async function fetchInfoUsuario() {
-            const propiedades = await infoUsuario(user.email)
+            const propiedades = await infoUsuario("usuarios", user.email)
             setPropiedades(propiedades.propiedades_rentadas)
             setInfoUser(propiedades)
         }
         fetchInfoUsuario()
     }, [])
 
-/*     propiedades.forEach((propiedad, i) =>{
-        async function propiedades (idDocumento) {
-            const docuRef= doc(firestore, `contratos/${propiedad}`)
-            const consulta = await getDoc(docuRef)
-            if (consulta.exists()){
-                const infoDocu = consulta.data();
-                setPropiedades(infoDocu)
-                return infoDocu.propiedades_rentadas
-            } else {
-                return "no tiene propiedades en proceso"
+    useEffect(() => {
+        async function fetchCasas(){
+            let array = []
+            for (let index = 0; index < propiedades.length; index++) {
+                const element = propiedades[index];
+                const datosCasa = await infoUsuario("contratos", element)
+                array.push(datosCasa)
             }
+            setInfoPropiedad(array)
         }
+        fetchCasas()
+    }, [propiedades])
     
-    }) */
 
-
+    console.log(infoPropiedad)
     console.log(propiedades)
     console.log(infoUser)
     return (
         <>
             <h1>Home</h1>
-            
         </>
     ) 
 }
