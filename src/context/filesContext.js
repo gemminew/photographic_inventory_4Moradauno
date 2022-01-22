@@ -1,4 +1,4 @@
-import React, {useState, createContext} from 'react'
+import React, {useState, createContext, useEffect} from 'react'
 
 import { firestore } from '../Firebase/config'
 import {doc, getDoc} from 'firebase/firestore'
@@ -12,9 +12,10 @@ export const FilesProvider = (props) => {
     const [propiedades, setPropiedades] = useState(null);
     const [infoUser, setInfoUser] = useState()
     const [fotografias, setFotografias] = useState()
-    const [seccion, setSeccion] = useState("baño")
-    const [propiedadQueSubeFotos, setPropiedadQueSubeFotos] = useState("2")
+    const [seccion, setSeccion] = useState()
+    const [propiedadQueSubeFotos, setPropiedadQueSubeFotos] = useState()
     const [infoPropiedad, setInfoPropiedad] = useState()
+    const [arrayNumerosContratos, setArrayNumerosContratos] = useState()
 
     async function getInfo (coleccion, idDocumento) {
         const docuRef= doc(firestore, `${coleccion}/${idDocumento}`)
@@ -22,6 +23,15 @@ export const FilesProvider = (props) => {
         const infoDocu = consulta.data();
         return infoDocu
     }
+
+     useEffect(() => {
+        async function fetchCasas(){
+            const casas = await getInfo("array_contratos", "numeros_contrato") 
+            setArrayNumerosContratos(casas.numeros)
+        }
+        fetchCasas()
+    }, [])
+console.log(propiedadQueSubeFotos)
 
     return(
         <FilesContext.Provider value ={{
@@ -43,7 +53,8 @@ export const FilesProvider = (props) => {
             propiedadQueSubeFotos,
             setPropiedadQueSubeFotos,
             infoPropiedad,
-            setInfoPropiedad
+            setInfoPropiedad,
+            arrayNumerosContratos
         }}>
             {props.children}
         </FilesContext.Provider>

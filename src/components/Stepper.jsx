@@ -1,4 +1,6 @@
 import * as React from 'react';
+import {useContext} from 'react'
+
 import CssBaseline from '@mui/material/CssBaseline';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -15,6 +17,8 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import SearchContract from './SearchContract/SearchContract';
 import UploadFiles from './UploadFiles/UploadFiles';
 import RenderArchives from './RenderArchives/RenderArchives';
+
+import {FilesContext} from '../context/filesContext'
 
 function Copyright() {
   return (
@@ -73,7 +77,7 @@ export default function Checkout() {
       <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
         <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
           <Typography component="h1" variant="h4" align="center">
-           Revisar fotografías
+           Inventario fotográfico
           </Typography>
           <Stepper activeStep={activeStep} sx={{ pt: 3, pb: 5 }}>
             {steps.map((label) => (
@@ -85,13 +89,7 @@ export default function Checkout() {
           <React.Fragment>
             {activeStep === steps.length ? (
               <React.Fragment>
-                <Typography variant="h5" gutterBottom>
-                  Gracias por subir las fotos
-                </Typography>
-                <Typography variant="subtitle1">
-                  En cuanto el inquilino las revise y las autorice, te notificaremos.
-                  Gracias por usar Broker App de Morada Uno
-                </Typography>
+                <p>fotos</p>
               </React.Fragment>
             ) : (
               <React.Fragment>

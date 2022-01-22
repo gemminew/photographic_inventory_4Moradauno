@@ -3,7 +3,7 @@ import React, {useContext, useState, useEffect} from 'react';
 import LabelBottomNavigation from './LabelBottomNavigation';
 import './ImgUp.css'
 
-import { FilesContext } from '../../Context/filesContext'
+import { FilesContext } from '../../context/filesContext'
 
 import { storage, firestore } from '../../Firebase/config'
 
@@ -12,7 +12,7 @@ import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
 
 export default function ImgUp () {
 
-  const { seccion, getInfo, propiedadQueSubeFotos, infoPropiedad, setInfoPropiedad} = useContext(FilesContext)
+  const { seccion, propiedadQueSubeFotos, infoPropiedad} = useContext(FilesContext)
 
   const [urlDescarga, setUrlDescarga] = useState()
   const [fotosNombre, setFotosNombre] = useState()
@@ -22,13 +22,7 @@ export default function ImgUp () {
       setFotosNombre(nomFot)
   }, [nomFot])
   
-  useEffect(() => {
-      async function fetchInfoPropiedad() {
-          const setearPropiedadInfo = await getInfo("contratos", propiedadQueSubeFotos)
-          setInfoPropiedad(setearPropiedadInfo)
-      }
-      fetchInfoPropiedad()
-  }, []) 
+
 
   async function fileHandler (e) {
       const archivoLocal = e.target.files
@@ -46,7 +40,7 @@ export default function ImgUp () {
   
    async function añadirFotosApropiedad(e){
       e.preventDefault()
-      const descripcion = e.target.descripcion.value
+      const descripcion = e.target.placeComent.value
       const nuevoArrayPropiedad = 
           {
               ...infoPropiedad,
@@ -59,7 +53,7 @@ export default function ImgUp () {
 
       const docuRef = doc(firestore, `contratos/${propiedadQueSubeFotos}`)
       await updateDoc(docuRef, nuevoArrayPropiedad)
-      e.target.descripcion.value = ""
+      e.target.placeComent.value = ""
   }
 
 
@@ -69,20 +63,31 @@ export default function ImgUp () {
 
   return (
     <div id = "div2">
-    <h1 id='categoria'>{seccion} </h1>
-    <LabelBottomNavigation/>
-    {/* <label for="file-upload" class="custom-file-upload">
-    Subir Imágenes 
-    </label> */}
-    <form onSubmit={añadirFotosApropiedad}>
-        <p id='comentarios'> Comentarios </p>
-        <input id='descripcion' type="text" placeholder='Agrega aqui tu comentario' />
-        <p>sube tus imágenes</p>
-        <input id="file-upload"  type="file" accept='image/*' multiple onChange={fileHandler}></input>
-        <button id='guardar' type='submit'>Guardar imágenes</button>
-    </form>
-    {/* <input id="file-upload" type="file" accept="image/*" capture="camera"></input> */}
-    
+        <h1 id='categoria'>{seccion} </h1>
+        <LabelBottomNavigation/>
+        <form onSubmit={añadirFotosApropiedad}>
+            <h1 id='imagenes'> Imágenes </h1>
+            <label htmlFor="file-upload" class="custom-file-upload">Subir Imagenes</label>
+            <input  type="file" id="file-upload" accept='image/*' multiple onChange={fileHandler}></input>
+            <p id='comentarios'> Comentarios </p>
+            <input id='placeComent' type="text" placeholder='Agrega aqui tu comentario' />
+            <p>sube tus imágenes</p>
+            <button type='submit' id='guardar'>Guardar imágenes</button>
+        </form>
     </div>
   );
 }
+
+/* return (
+    <div id = "div2">
+        <h1 id='categoria'>{seccion} </h1>
+        <LabelBottomNavigation/>
+        <form onSubmit={añadirFotosApropiedad}>
+            <p > Comentarios </p>
+            <input id='descripcion' type="text" placeholder='Agrega aqui tu comentario' />
+            <p>sube tus imágenes</p>
+            <input  type="file" accept='image/*' multiple onChange={fileHandler}></input>
+            <button type='submit'>Guardar imágenes</button>
+        </form>
+    </div>
+  ); */
