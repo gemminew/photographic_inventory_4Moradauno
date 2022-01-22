@@ -5,7 +5,7 @@ import {FilesContext} from '../../Context/filesContext'
 
 import { doc, getDoc } from 'firebase/firestore'
 import './Home.css'
-import ModalGaleria from '../../Modal/ModalGaleria';
+import ModalGaleria from '../../Modales/ModalGaleria';
 import { StyledEngineProvider } from '@mui/material/styles';
 
 

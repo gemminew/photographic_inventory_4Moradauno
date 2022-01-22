@@ -2,7 +2,7 @@ import * as React from 'react';
 import { styled, Box } from '@mui/system';
 import ModalUnstyled from '@mui/base/ModalUnstyled';
 import camara from '../Assets/camara.png'
-import './Modal.css'
+import './Modales.css'
 
 const StyledModal = styled(ModalUnstyled)`
   position: fixed;
