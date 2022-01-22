@@ -4,13 +4,13 @@ import { FilesContext } from '../../context/filesContext'
 
 import { storage, firestore } from '../../Firebase/config'
 
-import { doc, getDoc, setDoc, updateDoc } from 'firebase/firestore'
+import { doc, updateDoc } from 'firebase/firestore'
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
 
 
 const Subir = () => {
 
-    const {fotografias, setFotografias, seccion, getInfo, propiedadQueSubeFotos, infoPropiedad, setInfoPropiedad} = useContext(FilesContext)
+    const { seccion, getInfo, propiedadQueSubeFotos, infoPropiedad, setInfoPropiedad} = useContext(FilesContext)
 
     const [urlDescarga, setUrlDescarga] = useState()
     const [fotosNombre, setFotosNombre] = useState()
