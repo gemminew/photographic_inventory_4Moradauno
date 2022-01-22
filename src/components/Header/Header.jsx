@@ -6,7 +6,7 @@ import {
 import './Header.css'
 
 import { auth } from "../../Firebase/config";
-import {FilesContext} from '../../Context/filesContext'
+import {FilesContext} from '../../context/filesContext'
 
 import logo from '../../Assets/Logo.png'
 
