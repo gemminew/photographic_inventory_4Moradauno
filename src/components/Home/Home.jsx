@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react';
 
 import {firestore} from '../../Firebase/config'
-import {FilesContext} from '../../Context/filesContext'
+import {FilesContext} from '../../context/filesContext'
 
 import { doc, getDoc } from 'firebase/firestore'
 import './Home.css'
@@ -11,19 +11,13 @@ import { StyledEngineProvider } from '@mui/material/styles';
 
 function Home() {
 
-    const {user, infoUser, setInfoUser, propiedades, setPropiedades} = useContext(FilesContext)
+    const {user, infoUser, setInfoUser, propiedades, setPropiedades, getInfo} = useContext(FilesContext)
     const [infoPropiedad, setInfoPropiedad] = useState()
 
-    async function infoUsuario (coleccion, idDocumento) {
-        const docuRef= doc(firestore, `${coleccion}/${idDocumento}`)
-        const consulta = await getDoc(docuRef)
-        const infoDocu = consulta.data();
-        return infoDocu
-    }
 
     useEffect(() => {
         async function fetchInfoUsuario() {
-            const propiedades = await infoUsuario("usuarios", user.email)
+            const propiedades = await getInfo("usuarios", user.email)
             setPropiedades(propiedades.propiedades_rentadas)
             setInfoUser(propiedades)
         }
@@ -35,7 +29,7 @@ function Home() {
             let array = []
             for (let index = 0; index < propiedades.length; index++) {
                 const element = propiedades[index];
-                const datosCasa = await infoUsuario("contratos", element)
+                const datosCasa = await getInfo("contratos", element)
                 array.push(datosCasa)
             }
             setInfoPropiedad(array)
