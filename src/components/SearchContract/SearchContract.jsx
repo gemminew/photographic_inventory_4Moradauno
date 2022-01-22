@@ -4,16 +4,19 @@ import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 // import FormControlLabel from '@mui/material/FormControlLabel';
 // import Checkbox from '@mui/material/Checkbox';
-import ModalInstructivo from '../../Modales/ModalInstructivo';
+import ModalInstructivo from '../Modales/ModalInstructivo';
+import './SearchContract.css'
+
+
 
 export default function SearchContract() {
-  return (
+  return (  
+   
     <React.Fragment>
-      <Typography variant="h6" gutterBottom>
-        Número de Contrato
-      </Typography>
+  
+      
       <Grid container spacing={3}>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={12}>
           <TextField
             required
             id="numeroContrato"
@@ -24,11 +27,9 @@ export default function SearchContract() {
             variant="standard"
           />
         </Grid>
-        <br></br>
-        <Typography variant="h6" gutterBottom>
-         Nombre de Propiedad
-      </Typography>
-        <Grid item xs={12} sm={6}>
+       
+    
+        <Grid item xs={12} sm={12}>
           <TextField
             required
             id="nombrePropiedad"
@@ -39,7 +40,6 @@ export default function SearchContract() {
             variant="standard"
           />
         </Grid>
-        <ModalInstructivo></ModalInstructivo>
        
         {/* <Grid item xs={12}>
           <FormControlLabel
@@ -48,6 +48,8 @@ export default function SearchContract() {
           />
         </Grid> */}
       </Grid>
+      <ModalInstructivo></ModalInstructivo>
+      <button className="buttonGuardar">Guardar</button>
     </React.Fragment>
   );
 }

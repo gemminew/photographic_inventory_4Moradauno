@@ -1,11 +1,11 @@
 import React, {useContext, useEffect, useState} from 'react';
 
 import {firestore} from '../../Firebase/config'
-import {FilesContext} from '../../Context/filesContext'
+import {FilesContext} from '../../context/filesContext'
 
 import { doc, getDoc } from 'firebase/firestore'
 import './Home.css'
-import ModalGaleria from '../../Modales/ModalGaleria';
+import ModalGaleria from '../Modales/ModalGaleria';
 import { StyledEngineProvider } from '@mui/material/styles';
 
 
@@ -63,13 +63,12 @@ function Home() {
            
             </section>
             <section>
-            <StyledEngineProvider injectFirst>
-    <ModalGaleria/>
-  </StyledEngineProvider>,
 
-            {/* <ModalGaleria = {ModalGaleria}></ModalGaleria> */}
-            {/* <a href="url">Ver las fotos</a> */}
-            
+                <StyledEngineProvider injectFirst>
+                <ModalGaleria />
+                </StyledEngineProvider>
+            <a href="url">Ver las fotos</a>
+
             </section>
             </section>
             </section>

@@ -1,9 +1,7 @@
 import * as React from 'react';
 import { styled, Box } from '@mui/system';
 import ModalUnstyled from '@mui/base/ModalUnstyled';
-import camara from '../Assets/camara.png'
-import './Modal.css'
-import Typography from '@mui/material/Typography';
+import camara from '../../Assets/camara.png'
 
 const StyledModal = styled(ModalUnstyled)`
   position: fixed;
@@ -30,23 +28,24 @@ const Backdrop = styled('div')`
 `;
 
 const style = {
-  width: 400,
-  bgcolor: '#5B1A96',
-  border: '2px solid #000',
+//   width: 400,
+//   bgcolor: '#5B1A96',
+   border: '2px solid #000',
   p: 2,
   px: 4,
   pb: 3,
 };
 
-export default function ModalInstructivo() {
+export default function ModalGaleria() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   return (
-    <div>
-      <button id="buttonModalInstructivo" type="buttonModal" onClick={handleOpen}>
-        Guia de imagenes
+    <div >
+       
+      <button className="buttonModalGaleria" type="buttonModal" onClick={handleOpen}>
+       Ver Galeria
       </button>
       <StyledModal
         aria-labelledby="unstyled-modal-title"
@@ -57,14 +56,10 @@ export default function ModalInstructivo() {
       >
         <Box sx={style}>
         <img src={camara} alt="camara" />
-        <h2 id="unstyled-modal-title">Consideraciones que deben cumplir tus fotografias.</h2>
-          <p>Hacer las fotos en días soleados y a las horas centrales del día para evitar sombras,  enciende todas las luces disponibles.
-              No uses flash.
-              Fotografía  desde las esquinas y evita que aparezcan personas en las fotos.
-              Tomar fotos por sección de la casa e incluir estanterias, muebles, electrodométicos.
-              Agrega fotografias que se concentren en mostrar daños superficiales o desperfectos, en caso de que existan.</p>
-             Agregando texto para prueba
-             </Box>
+
+          <h2 id="unstyled-modal-title">Aqui se mostrarán las fotos del inmueble</h2>
+         
+        </Box>
       </StyledModal>
     </div>
   );
