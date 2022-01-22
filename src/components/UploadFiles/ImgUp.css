@@ -1,0 +1,103 @@
+#div21{
+display: flex; 
+margin: 30em;
+justify-content: center;
+    align-items: center;
+}
+#comentarios{
+    width: 606px;
+height: 44px;
+
+font-family: M PLUS 1;
+font-style: normal;
+font-weight: normal;
+font-size: 48px;
+line-height: 70px;
+
+color: #7E288B;
+}
+#placeComent{
+    width: 27em;
+    height: 12em;
+    background: #F5F7F9;
+    border: 4px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 8px;  
+}
+#categoria{
+    width: 606px;
+    height: 44px;
+    
+    font-family: M PLUS 1;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 70px;
+    
+    color: #7E288B;
+}
+#imagenes{
+    width: 606px;
+    height: 44px;
+    
+    font-family: M PLUS 1;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 70px;
+    
+    color: #7E288B;
+}
+#imgUp{
+    width: 300px;
+background: #7E288B;
+border-radius: 30px;
+
+}
+#divBoton{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+#guardar{
+    width: 80px;
+height: 23px;
+
+background: #7E288B;
+border-radius: 30px;
+}
+#enviar{
+    width: 80px;
+    height: 23px;
+    
+    background: #7E288B;
+    border-radius: 30px;
+}
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-family: M PLUS 1;
+    font-style: normal;
+    font-weight: 40;
+    font-size: 20px;
+    line-height: 52px;
+
+    background: #FFFFFF;
+    border: 8px solid #1ABBBF;
+    box-sizing: border-box;
+    border-radius: 15px;
+    color: #1ABBBF;
+}
+@media (max-width: 600px){
+    .render-tittle1{
+        font-size: 9px;
+    }
+    .render-tittle1{
+        font-size: 9px;
+    }
+}
