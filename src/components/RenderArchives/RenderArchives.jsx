@@ -2,9 +2,43 @@ import React, {useContext, useEffect} from 'react';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
-import {FilesContext} from '../../context/filesContext'
+import PropTypes from 'prop-types';
+import Typography from '@mui/material/Typography';
+import { FilesContext } from "../../context/filesContext";
+import ImgUp from "../UploadFiles/ImgUp";
 
-//fotos_fachada, fotos_recamara, fotos_baño, fotos_cocina, fotos_sala, fotos_otros
+function TabPanel(props) {
+  const { children, value, index, ...other } = props;
+  
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
+      {...other}
+    >
+      {value === index && (
+        <Box sx={{ p: 3 }}>
+          <Typography>{children}</Typography>
+        </Box>
+      )}
+    </div>
+  );
+}
+
+TabPanel.propTypes = {
+  children: PropTypes.node,
+  index: PropTypes.number.isRequired,
+  value: PropTypes.number.isRequired,
+};
+
+function a11yProps(index) {
+  return {
+    id: `simple-tab-${index}`,
+    'aria-controls': `simple-tabpanel-${index}`,
+  };
+}
 
 
 export default function RenderArchives() {
@@ -22,13 +56,6 @@ export default function RenderArchives() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
-  
-
-  
-
-    
-    
 
    useEffect(() => {
     let arraysecciones = []
@@ -56,9 +83,6 @@ export default function RenderArchives() {
       <p>En caso de que necesites borrar alguna, vuelve al paso anterior</p>
     </div> 
     <div>
-{/*     comentarios: descripcion,
-      fotos: urlDescarga,
-      seccion: seccion */}
       {
         infoSeccion.map((element) => {
           return( //todas las secciones
@@ -66,20 +90,17 @@ export default function RenderArchives() {
               const fotos = value.fotos
               return( //values de cada sección
                 <>
-                <p key={key}>{value.seccion}</p>
-                <p key={value.seccion}>{value.comentarios}</p>
-                <div key={element.length} style={{display: "flex", flexWrap: "wrap"}}>
-                {
-                  fotos.map((url, i) => {
-                    return(
-                      <img key={i}src={url} alt={`foto`} style={{width: "100px"}} />
-                    )
-                    
-                  })
-                }
-                </div>
-
-
+                  <p key={key}>{value.seccion}</p>
+                  <p key={value.seccion}>{value.comentarios}</p>
+                  <div key={element.length} style={{display: "flex", flexWrap: "wrap"}}>
+                  {
+                    fotos.map((url, i) => {
+                      return(
+                        <img key={i}src={url} alt={`foto`} style={{width: "100px"}} />
+                      )
+                    })
+                  }
+                  </div>
                 </>
               )
             })
@@ -87,42 +108,22 @@ export default function RenderArchives() {
         })
       }
     </div>
- <Box sx={{ maxWidth: 480, bgcolor: 'background.paper' }}>
-      <Tabs
-        value={value}
-        onChange={handleChange}
-        variant="scrollable"
-        scrollButtons="auto"
-        aria-label="scrollable auto tabs example"
-      >
-        <Tab label="Estancia" />
-        <Tab label="Comedor" />
-        <Tab label="Sala" />
-        <Tab label="Habitación" />
-        <Tab label="Baño" />
-        <Tab label="Cocina" />
-        <Tab label="Otros" />
+    <Box sx={{ width: "100%" }}>
+    <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+      <Tabs value={value} onChange={handleChange}>
+        <Tab label="Asesor@ Inmobiliario" {...a11yProps(0)} />
+        <Tab label="Inquilin@" {...a11yProps(1)} />
       </Tabs>
-    </Box> 
+    </Box>
+    <TabPanel value={value} index={0}>
+      <ImgUp />
+    </TabPanel>
+    <TabPanel value={value} index={1}>
+      <ImgUp />
+    </TabPanel>
+  </Box>
     </>
   );
 }
 
-//import comedor from "../Assets/comedor.jpg";
 
-/* const RenderArchives = () => {
-
-  return (
-    <div>
-      <h1>Categorias</h1>
-      <div>
-        <h2>Por favor, verifica que estás feliz con las fotos que subiste</h2>
-        <p>En caso de que necesites borrar alguna, vuelve al paso anterior</p>
-
-
-      </div>
-    </div>
-  );
-}
-
-export default RenderArchives; */

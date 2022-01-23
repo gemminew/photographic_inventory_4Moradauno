@@ -43,27 +43,7 @@ function Home() {
     console.log(infoUser)
     return (
         <>
-            <h1>Home</h1>
-            <section class="home-container">
-            <section class="left-container">
-                <h3>Casa Lomas</h3>
-                <p>Contrato: 31416</p> 
-                <p>Pendiente de aprobación</p>
-            </section>
-            <section class="right-contains">
-            <section class="right-container">
-           
-            </section>
-            <section>
-
-                <StyledEngineProvider injectFirst>
-                <ModalGaleria />
-                </StyledEngineProvider>
-            <a href="url">Ver las fotos</a>
-
-            </section>
-            </section>
-            </section>
+            <h2>Selecciona una propiedad</h2>
         </>
     ) 
 }
