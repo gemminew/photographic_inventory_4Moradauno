@@ -40,22 +40,29 @@ export default function ImgUp () {
   
    async function añadirFotosApropiedad(e){
       e.preventDefault()
+      if(seccion === undefined){
+          alert("elije una sección de la casa") 
+      }
       const descripcion = e.target.placeComent.value
       const nuevoArrayPropiedad = 
           {
               ...infoPropiedad,
               [fotosNombre]: {
-                  comentarios: descripcion,
-                  fotos: urlDescarga
+                  comentarios: descripcion ? descripcion : "",
+                  fotos: urlDescarga ? urlDescarga : [],
+                  seccion: seccion
               }
           }
       
+    if(seccion === undefined){
+        alert("no hay información para guardar en esta sección")
+    } else {
+        const docuRef = doc(firestore, `contratos/${propiedadQueSubeFotos}`)
+        await updateDoc(docuRef, nuevoArrayPropiedad)
+        e.target.placeComent.value = ""
+    }
 
-      const docuRef = doc(firestore, `contratos/${propiedadQueSubeFotos}`)
-      await updateDoc(docuRef, nuevoArrayPropiedad)
-      e.target.placeComent.value = ""
   }
-
 
   console.log(urlDescarga)
   console.log(infoPropiedad)

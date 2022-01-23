@@ -1,5 +1,4 @@
 import * as React from 'react';
-import {useContext} from 'react'
 
 import CssBaseline from '@mui/material/CssBaseline';
 import AppBar from '@mui/material/AppBar';
@@ -18,7 +17,7 @@ import SearchContract from './SearchContract/SearchContract';
 import UploadFiles from './UploadFiles/UploadFiles';
 import RenderArchives from './RenderArchives/RenderArchives';
 
-import {FilesContext} from '../context/filesContext'
+
 
 function Copyright() {
   return (

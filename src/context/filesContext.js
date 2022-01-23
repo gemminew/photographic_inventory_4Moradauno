@@ -11,7 +11,7 @@ export const FilesProvider = (props) => {
     const [password, setPassword] = useState();
     const [propiedades, setPropiedades] = useState(null);
     const [infoUser, setInfoUser] = useState()
-    const [fotografias, setFotografias] = useState()
+    const [infoSeccion, setInfoSeccion] = useState([])
     const [seccion, setSeccion] = useState()
     const [propiedadQueSubeFotos, setPropiedadQueSubeFotos] = useState()
     const [infoPropiedad, setInfoPropiedad] = useState()
@@ -31,7 +31,7 @@ export const FilesProvider = (props) => {
         }
         fetchCasas()
     }, [])
-console.log(propiedadQueSubeFotos)
+
 
     return(
         <FilesContext.Provider value ={{
@@ -45,14 +45,14 @@ console.log(propiedadQueSubeFotos)
             setPropiedades,
             infoUser,
             setInfoUser,
-            fotografias,
-            setFotografias,
+            infoSeccion, 
+            setInfoSeccion,
             seccion,
             setSeccion,
             getInfo,
             propiedadQueSubeFotos,
             setPropiedadQueSubeFotos,
-            infoPropiedad,
+            infoPropiedad, 
             setInfoPropiedad,
             arrayNumerosContratos
         }}>

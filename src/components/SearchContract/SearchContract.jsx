@@ -17,7 +17,15 @@ import './SearchContract.css'
 
 export default function SearchContract() {
 
-  const {arrayNumerosContratos, setPropiedadQueSubeFotos, propiedadQueSubeFotos, setInfoPropiedad, infoPropiedad, getInfo} = useContext(FilesContext)
+  const {
+    arrayNumerosContratos, 
+    setPropiedadQueSubeFotos, 
+    propiedadQueSubeFotos, 
+    infoPropiedad, 
+    setInfoPropiedad, 
+    getInfo
+  } = useContext(FilesContext)
+
   const [casa, setCasa] = useState()
   const [contrato, setContrato] = useState("")
 
@@ -44,16 +52,17 @@ await updateDoc(docuRef, nuevoArrayPropiedad)
   useEffect(() => {
     async function fetchInfoPropiedad() {
         const setearPropiedadInfo = await getInfo("contratos", propiedadQueSubeFotos)
+       
         setInfoPropiedad(setearPropiedadInfo)
         setCasa(setearPropiedadInfo?.alias_casa)
         setContrato(setearPropiedadInfo?.numero_contrato)
-      
     }
     fetchInfoPropiedad()
+  
   }, [getInfo]) 
 
-  console.log(propiedadQueSubeFotos)
 
+  
   return (
     
     <React.Fragment>

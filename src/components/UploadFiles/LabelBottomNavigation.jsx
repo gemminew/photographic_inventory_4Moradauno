@@ -29,7 +29,7 @@ export default function LabelBottomNavigation() {
         value="fachada"
         icon={<HomeIcon />}
       />
-      <BottomNavigationAction
+      <BottomNavigationAction 
         label="Recamara"
         value="recamara"
         icon={<BedIcon />}
