@@ -1,0 +1,23 @@
+.make-it-flex{
+    flex-direction:column;
+    width: 50%;
+}
+img{
+    height:100%;
+    width: 20px;
+}
+.image{
+    object-fit: fill;
+    height:100%;
+    width: -webkit-fill-available;  
+}
+.up{
+    flex-direction: column;
+    width: 50%;
+}
+
+.yayu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
