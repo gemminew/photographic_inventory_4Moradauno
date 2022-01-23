@@ -7,9 +7,13 @@ import Box from '@mui/material/Box';
 import Home from './Home'
 import './BrokerHome.css'
 import MediaControlCard from './Cards';
+import SearchContract from '../../components/SearchContract/SearchContract';
+import { useNavigate } from "react-router-dom";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
+  
+
 
   return (
     <div
@@ -48,6 +52,11 @@ export default function BasicTabs() {
     setValue(newValue);
   };
 
+  const navigate = useNavigate();
+  const goToStepper = () => {
+    navigate("/section");
+  }
+
   return (
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
@@ -59,7 +68,8 @@ export default function BasicTabs() {
       </Box>
       <TabPanel value={value} index={0}>
         <Home/>
-        <MediaControlCard/>
+        <button color="primary" className="goToNew"
+                onClick={goToStepper}>Añadir nueva propiedad</button>
       </TabPanel>
       <TabPanel value={value} index={1}>
         <Home/>
