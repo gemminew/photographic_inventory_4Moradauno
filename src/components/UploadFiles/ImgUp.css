@@ -1,3 +1,5 @@
+
+
 #comentarios{
     width: 606px;
 height: 44px;
@@ -5,15 +7,14 @@ height: 44px;
 font-family: M PLUS 1;
 font-style: normal;
 font-weight: normal;
-font-size: 48px;
+font-size: 1.2em;
 line-height: 70px;
-
-color: #7E288B;
+color: black;
 }
 #placeComent{
     margin:20px;
     width: 27em;
-    height: 12em;
+    height: 6em;
     background: #F5F7F9;
     border: 4px solid #C4C4C4;
     box-sizing: border-box;
@@ -25,17 +26,15 @@ color: #7E288B;
     font-weight: normal;
     font-size: 48px;
     line-height: 70px;
-    
     color: #7E288B;
 }
 #imagenes{
     font-family: M PLUS 1;
     font-style: normal;
     font-weight: normal;
-    font-size: 48px;
-    line-height: 70px;
-    
-    color: #7E288B;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    color: black;
 }
 #imgUp{
 background: #7E288B;
