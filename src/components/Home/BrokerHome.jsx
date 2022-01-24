@@ -11,6 +11,7 @@ import MediaControlCard from './Cards';
 import SearchContract from '../../components/SearchContract/SearchContract';
 import { useNavigate } from "react-router-dom";
 import { FilesContext } from '../../context/filesContext'
+import sinFotoFachada from '../../Assets/no-propertyfound.png'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -94,11 +95,12 @@ export default function BasicTabs() {
   
       for (let i = 0; i < objeto.length; i++) {
         const element = objeto[i]; //objeto
-        console.log(element.fotos_fachada.fotos[0])
         arrayObjetosRenderizar.push({
           alias_casa: element.alias_casa,
           numero_contrato: element.numero_contrato,
-          foto_fachada: element.fotos_fachada.fotos[0]
+          foto_fachada: element.fotos_fachada ? 
+                        element.fotos_fachada.fotos[0] :
+                        ""
         })
       }
       setObjeto(arrayObjetosRenderizar) 
@@ -132,7 +134,7 @@ export default function BasicTabs() {
           {propiedadesRentadasRenderizar.map(propiedad => {
             console.log(propiedad)
             return(
-              <MediaControlCard key={crypto.randomUUID()} numero_contrato={propiedad.numero_contrato} alias_casa={propiedad.alias_casa} foto_fachada={propiedad.foto_fachada}/>
+              <MediaControlCard key={crypto.randomUUID()} numero_contrato={propiedad.numero_contrato} alias_casa={propiedad.alias_casa} foto_fachada={propiedad.foto_fachada === "" ? sinFotoFachada : propiedad.foto_fachada}/>
             )
           })}
         </div>
@@ -142,7 +144,7 @@ export default function BasicTabs() {
           {propiedadesEnProcesoRenderizar.map(propiedad => {
             console.log(propiedad)
             return(
-              <MediaControlCard key={crypto.randomUUID()} numero_contrato={propiedad.numero_contrato} alias_casa={propiedad.alias_casa} foto_fachada={propiedad.foto_fachada}/>
+              <MediaControlCard key={crypto.randomUUID()} numero_contrato={propiedad.numero_contrato} alias_casa={propiedad.alias_casa} foto_fachada={propiedad.foto_fachada === "" ? sinFotoFachada : propiedad.foto_fachada}/>
             )
           })}
         </div>
