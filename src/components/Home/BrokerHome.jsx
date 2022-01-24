@@ -13,8 +13,6 @@ import { useNavigate } from "react-router-dom";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
   
-
-
   return (
     <div
       role="tabpanel"
