@@ -9,6 +9,7 @@ import { auth } from "../../Firebase/config";
 import {FilesContext} from '../../context/filesContext'
 
 import logo from '../../Assets/Logo.png';
+import celular from '../../Assets/celular.png';
 import { useNavigate } from "react-router-dom";
 
 
@@ -25,7 +26,8 @@ const Header = () => {
   };
   return (
     <div className="header">
-      <img src={logo} alt="logo morada uno" className="header__logo"  onClick={goToMain}/>
+      <img src={logo} alt="logo morada uno" id ="Logo" className="header__logo"  onClick={goToMain}/>
+      <img src={celular} alt="logo morada uno" id ="Celular"  className="header__celular"  onClick={goToMain}/>
       {user ? <button onClick={logout} className="header__logout"> LogOut </button> : null}
 
     </div>

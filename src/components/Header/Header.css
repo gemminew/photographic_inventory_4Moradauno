@@ -8,7 +8,18 @@
 }
 
 .header__logo{
-    height: 30px;
+    height: 40px;
+    width: 280px;
+    margin-left: 50px;
+}
+.header__celular{
+    height: 40px;
+    width: 40px;
+    margin-left: 50px;
+}
+.header__{
+    height: 40px;
+    width: 40px;
     margin-left: 50px;
 }
 
@@ -22,3 +33,19 @@
     color: aquamarine;
     font-weight: bold;
 }
+@media screen and (max-width:520px){
+    .header__logo {
+           display: none;
+        }
+    .header__celular {
+           display: block;
+        }
+    }
+    @media screen and (min-width:522px){
+        .header__logo {
+               display: block;
+            }
+        .header__celular {
+               display: none;
+            }
+        }

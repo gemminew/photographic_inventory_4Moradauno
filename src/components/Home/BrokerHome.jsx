@@ -12,6 +12,17 @@ import SearchContract from '../../components/SearchContract/SearchContract';
 import { useNavigate } from "react-router-dom";
 import { FilesContext } from '../../context/filesContext'
 import sinFotoFachada from '../../Assets/no-propertyfound.png'
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+const theme = createTheme({
+  palette:{
+    primary:{
+      main:'#1ABBBF'},
+    secondary:{
+      main:'#ff9800'
+    },
+  },
+ 
+})
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -115,6 +126,7 @@ export default function BasicTabs() {
  
   
   return (
+    <ThemeProvider theme={theme}>
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" className="ya">
@@ -150,5 +162,6 @@ export default function BasicTabs() {
         </div>
       </TabPanel>
     </Box>
+    </ThemeProvider>
   );
 }

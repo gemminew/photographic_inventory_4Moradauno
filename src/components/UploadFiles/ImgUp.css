@@ -4,7 +4,7 @@
 font-family: M PLUS 1;
 font-style: normal;
 font-size: 1.2em;
-color: black;
+color: #424242;
 }
 #placeComent{
     margin: 1em 0;
@@ -19,22 +19,25 @@ color: black;
     font-family: M PLUS 1;
     font-style: normal;
     font-weight: normal;
-    font-size: 48px;
+    font-size: 20px;
     line-height: 70px;
-    color: #7E288B;
+    color:#424242;
+    justify-content: center;
+    align-items: center;
 }
 #imagenes{
     font-family: M PLUS 1;
     font-size: 1.5em;
     line-height: 1.5em;
-    color: black;
-    width: 100%;
+    color: #424242;
+    width: 90%;
 }
-#imgUp{
+#isubir{
 background: #7E288B;
-border-radius: 30px;
+border-radius: 4px;
 
 }
+
 #divBoton{
     display:flex;
     justify-content: center;
@@ -47,7 +50,7 @@ border-radius: 30px;
     cursor: pointer;
     color: #FFFFFF;
     background: #7E288B;
-border-radius: 20px;
+border-radius: 4px;
  margin-top: 2em;
 }
 #enviar{
@@ -57,7 +60,7 @@ border-radius: 20px;
     cursor: pointer;
     color: #FFFFFF;
     background: #7E288B;
-border-radius: 30px;
+border-radius: 4px;
 
 }
 input[type="file"] {
