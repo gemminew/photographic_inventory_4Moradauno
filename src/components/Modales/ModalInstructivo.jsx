@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { styled, Box } from '@mui/system';
 import ModalUnstyled from '@mui/base/ModalUnstyled';
-import camara from '../../Assets/camara.png'
+// import camara from '../../Assets/camara.png'
 import './Modal.css'
 import Typography from '@mui/material/Typography';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
@@ -58,11 +58,8 @@ export default function ModalInstructivo() {
         BackdropComponent={Backdrop}
       >
         <Box sx={style}>
-        <img src={camara} alt="camara" />
-
-          <Typography variant="h6" color="white" align="center" paragraph  >Consideraciones que deben cumplir tus fotografías.</Typography>
-          
-          
+        {/* <img src={camara} alt="camara" /> */}
+        <Typography variant="h6" color="white" align="center" paragraph  >Consideraciones que deben cumplir tus fotografías.</Typography>
           <Typography variant="subtitle1" color="white" align=" alignLeft" gutterBottom> <CheckCircleOutlineIcon fontSize="small"/>Hacer las fotos en días soleados y a las horas centrales del día para evitar sombras</Typography>
           <Typography variant="subtitle1" color="white" align=" alignLeft" gutterBottom><CheckCircleOutlineIcon fontSize="small"/>Enciende todas las luces disponibles.</Typography>
           <Typography variant="subtitle1" color="white" align=" alignLeft" gutterBottom><CheckCircleOutlineIcon fontSize="small"/>No uses flash.</Typography>
@@ -72,7 +69,6 @@ export default function ModalInstructivo() {
               
               
               
-               
         </Box>
       </StyledModal>
     </div>

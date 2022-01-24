@@ -4,17 +4,18 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
-
 import Main from './components/Main/Main'
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
-
+import SearchContract from './components/SearchContract/SearchContract';
+import UploadFiles from './components/UploadFiles/ImgUp';
+import RenderArchives from './components/RenderArchives/RenderArchives';
 import { FilesProvider } from './context/filesContext';
 import Stepper from './components/Stepper'
 
 //import { FilesProvider } from './context/filesContext'
 import GetStepContent from './components/Stepper'
-import SearchContract from './components/SearchContract/SearchContract';
+
 
 
 function App() {
@@ -22,12 +23,15 @@ function App() {
   return (
     <Router>
       <FilesProvider>
-        {/* <Header/> */}
-        <SearchContract></SearchContract>
-        {/* <Routes>
+        <Header/>
+        {/* <SearchContract></SearchContract> */}
+        <Routes>
         <Route path="/" element={<Main/>} />
         <Route path="/section" element={<Stepper/> } />
-        </Routes> */}
+        <Route path="/search" element={<SearchContract/> } />
+        <Route path="/upload" element={<UploadFiles/> } />
+        <Route path="/render" element={<RenderArchives/> } />
+        </Routes>
         <Footer/>
       </FilesProvider>
     </Router>

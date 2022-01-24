@@ -1,0 +1,21 @@
+.make-it-flex{
+    flex-direction:column;
+    width: 50%;
+}
+img{
+    height:100%;
+    width: 20px;
+}
+.image{
+    width: 40%;
+}
+.up{
+    flex-direction: column;
+    width: 50%;
+}
+
+.yayu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
