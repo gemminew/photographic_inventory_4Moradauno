@@ -14,6 +14,8 @@ import { FilesProvider } from './context/filesContext';
 import Stepper from './components/Stepper'
 
 //import { FilesProvider } from './context/filesContext'
+import GetStepContent from './components/Stepper'
+
 
 
 function App() {
@@ -22,6 +24,7 @@ function App() {
     <Router>
       <FilesProvider>
         <Header/>
+        {/* <SearchContract></SearchContract> */}
         <Routes>
         <Route path="/" element={<Main/>} />
         <Route path="/section" element={<Stepper/> } />
@@ -32,6 +35,7 @@ function App() {
         <Footer/>
       </FilesProvider>
     </Router>
+    
   );
 }
 

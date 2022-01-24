@@ -44,7 +44,7 @@ export default function ModalGaleria() {
   return (
     <div >
        
-      <button id="buttonModal" type="buttonModal" onClick={handleOpen}>
+      <button className="buttonModalGaleria" type="buttonModal" onClick={handleOpen}>
        Ver Galeria
       </button>
       <StyledModal

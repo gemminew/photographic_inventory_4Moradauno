@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { styled, Box } from '@mui/system';
 import ModalUnstyled from '@mui/base/ModalUnstyled';
-import camara from '../../Assets/camara.png'
+// import camara from '../../Assets/camara.png'
 import './Modal.css'
 import Typography from '@mui/material/Typography';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
@@ -31,7 +31,7 @@ const Backdrop = styled('div')`
 `;
 
 const style = {
-  width: 400,
+  width: 500,
   bgcolor: '#5A1A6A',
   border: '2px solid #000',
   p: 2,
@@ -47,7 +47,7 @@ export default function ModalInstructivo() {
   return (
     <div className="aiuda">
       
-      <button className="buttonModal" type="buttonModal" onClick={handleOpen}>
+      <button className="buttonModalInstructivo" type="buttonModal" onClick={handleOpen}>
       Guia de imagenes
       </button>
       <StyledModal
@@ -58,7 +58,7 @@ export default function ModalInstructivo() {
         BackdropComponent={Backdrop}
       >
         <Box sx={style}>
-        <img src={camara} alt="camara" />
+        {/* <img src={camara} alt="camara" /> */}
         <Typography variant="h6" color="white" align="center" paragraph  >Consideraciones que deben cumplir tus fotografías.</Typography>
           <Typography variant="subtitle1" color="white" align=" alignLeft" gutterBottom> <CheckCircleOutlineIcon fontSize="small"/>Hacer las fotos en días soleados y a las horas centrales del día para evitar sombras</Typography>
           <Typography variant="subtitle1" color="white" align=" alignLeft" gutterBottom><CheckCircleOutlineIcon fontSize="small"/>Enciende todas las luces disponibles.</Typography>

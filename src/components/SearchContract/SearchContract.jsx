@@ -67,16 +67,20 @@ await updateDoc(docuRef, nuevoArrayPropiedad)
     
     <React.Fragment>
       <form className='formBusqueda' onSubmit={añadirNumeroContrato}>
-        <p className='tituloInput'> Numero contrato </p>
+        <p className='tituloInput'> Número de contrato </p>
         <input id='numContrato' type="text" placeholder='123' required/>
         <br/>
+        <div className='buttons'>
         <button type='submit' className="buttonGuardar">Buscar</button>
+        <button type='submit' className="buttonGuardar">Guardar</button>
+        </div>
       </form>
       <div className='infoCasa'>
         <p className='infoCasa__text'>{casa}</p>
         <p className='infoCasa__text'>{contrato === undefined ? "" : `No. contrato ${contrato}`}</p>
       </div>
       <ModalInstructivo></ModalInstructivo>
+      
     </React.Fragment>
   );
 }

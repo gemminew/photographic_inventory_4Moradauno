@@ -4,7 +4,7 @@ import { FilesContext } from '../../context/filesContext'
 import { Typography } from '@mui/material';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import FolderIcon from '@mui/icons-material/Folder';
+// import FolderIcon from '@mui/icons-material/Folder';
 import GrassIcon from '@mui/icons-material/Grass';
 import BedIcon from '@mui/icons-material/Bed';
 import WcIcon from '@mui/icons-material/Wc';
