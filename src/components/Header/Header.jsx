@@ -9,7 +9,7 @@ import { auth } from "../../Firebase/config";
 import {FilesContext} from '../../context/filesContext'
 
 import logo from '../../Assets/Logo.png';
-
+import celular from '../../Assets/celular.png';
 import { useNavigate } from "react-router-dom";
 
 
