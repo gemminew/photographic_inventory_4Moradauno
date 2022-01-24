@@ -66,52 +66,17 @@ await updateDoc(docuRef, nuevoArrayPropiedad)
   return (
     
     <React.Fragment>
-            <form onSubmit={añadirNumeroContrato}>
-            <p > Numero contrato </p>
-            <input id='numContrato' type="text" placeholder='123' required/>
-            <br/>
-            <button type='submit'>Buscar</button>
-        </form>
-        <p>{casa}</p>
-        <p>{contrato === undefined ? "" : `No. contrato ${contrato}`}</p>
-{/*      
-      <Typography variant="h6" gutterBottom>
-      </Typography>
-      <Grid container spacing={3}>
-        <Grid item xs={12} sm={12}>
-          <TextField
-            required
-            id="numeroContrato"
-            name="numeroContrato"
-            label="Número de Contrato"
-            fullWidth
-            autoComplete="contrato"
-            variant="standard"
-          />
-        </Grid>
-        <Typography variant="h6" gutterBottom>
-      </Typography>
-        <Grid item xs={12} sm={12}>
-          <TextField
-            required
-            id="nombrePropiedad"
-            name="nombrePropiedad"
-            label="Nombre de Propiedad"
-            fullWidth
-            autoComplete="contrato"
-            variant="standard"
-          />
-        </Grid>
- 
-        {/* <Grid item xs={12}>
-          <FormControlLabel
-            control={<Checkbox color="secondary" name="saveAddress" value="yes" />}
-            label="Use this address for payment details"
-          />
-        </Grid> 
-      </Grid> */}
+      <form className='formBusqueda' onSubmit={añadirNumeroContrato}>
+        <p className='tituloInput'> Numero contrato </p>
+        <input id='numContrato' type="text" placeholder='123' required/>
+        <br/>
+        <button type='submit' className="buttonGuardar">Buscar</button>
+      </form>
+      <div className='infoCasa'>
+        <p className='infoCasa__text'>{casa}</p>
+        <p className='infoCasa__text'>{contrato === undefined ? "" : `No. contrato ${contrato}`}</p>
+      </div>
       <ModalInstructivo></ModalInstructivo>
-      <button className="buttonGuardar">Guardar</button>
     </React.Fragment>
   );
 }

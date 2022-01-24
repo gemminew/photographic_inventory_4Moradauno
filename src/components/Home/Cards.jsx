@@ -10,7 +10,7 @@ import './Cards.css';
 import logo from '../../Assets/Logo.png'
 import { useNavigate } from "react-router-dom";
 
-export default function MediaControlCard() {
+export default function MediaControlCard({alias_casa, numero_contrato, foto_fachada}) {
   const theme = useTheme();
 
   const navigate = useNavigate();
@@ -24,14 +24,14 @@ export default function MediaControlCard() {
         <form class="yayu">
         <section class="up">
         <Typography gutterBottom variant="h5" component="div">
-            Casa Lomas
+            {alias_casa}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-          Número de Contrato: 1234
+          Número de Contrato: {numero_contrato}
           </Typography>
         </section>
         <section class="make-it-flex">
-          <img src={logo} class="image"/>
+          <img src={foto_fachada} alt="fachada" class="image"/>
           <section>
             <StyledEngineProvider injectFirst>
               <ModalGaleria />

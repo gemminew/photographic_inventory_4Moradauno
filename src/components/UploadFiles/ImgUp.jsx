@@ -84,16 +84,3 @@ export default function ImgUp () {
   );
 }
 
-/* return (
-    <div id = "div2">
-        <h1 id='categoria'>{seccion} </h1>
-        <LabelBottomNavigation/>
-        <form onSubmit={añadirFotosApropiedad}>
-            <p > Comentarios </p>
-            <input id='descripcion' type="text" placeholder='Agrega aqui tu comentario' />
-            <p>sube tus imágenes</p>
-            <input  type="file" accept='image/*' multiple onChange={fileHandler}></input>
-            <button type='submit'>Guardar imágenes</button>
-        </form>
-    </div>
-  ); */
