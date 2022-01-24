@@ -82,6 +82,15 @@ export default function RenderArchives() {
       <h2>Por favor, verifica que estás feliz con las fotos que subiste</h2>
       <p>En caso de que necesites borrar alguna, vuelve al paso anterior</p>
     </div> 
+
+    <Box sx={{ width: "100%" }}>
+    <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+      <Tabs value={value} onChange={handleChange}>
+        <Tab label="Asesor@ Inmobiliario" {...a11yProps(0)} />
+        <Tab label="Inquilin@" {...a11yProps(1)} />
+      </Tabs>
+    </Box>
+    <TabPanel value={value} index={0}>
     <div>
       {
         infoSeccion.map((element) => {
@@ -108,18 +117,8 @@ export default function RenderArchives() {
         })
       }
     </div>
-    <Box sx={{ width: "100%" }}>
-    <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-      <Tabs value={value} onChange={handleChange}>
-        <Tab label="Asesor@ Inmobiliario" {...a11yProps(0)} />
-        <Tab label="Inquilin@" {...a11yProps(1)} />
-      </Tabs>
-    </Box>
-    <TabPanel value={value} index={0}>
-      <ImgUp />
     </TabPanel>
     <TabPanel value={value} index={1}>
-      <ImgUp />
     </TabPanel>
   </Box>
     </>

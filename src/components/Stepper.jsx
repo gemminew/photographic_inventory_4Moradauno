@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 import { useContext } from "react";
 
 import CssBaseline from "@mui/material/CssBaseline";
@@ -18,7 +18,6 @@ import SearchContract from "./SearchContract/SearchContract";
 import UploadFiles from "./UploadFiles/UploadFiles";
 import RenderArchives from "./RenderArchives/RenderArchives";
 import { useNavigate } from "react-router-dom";
-
 
 import { FilesContext } from "../context/filesContext";
 
@@ -66,7 +65,7 @@ export default function Checkout() {
   const navigate = useNavigate();
   const goToMain = () => {
     navigate("/");
-  }
+  };
 
   return (
     <ThemeProvider theme={theme}>
@@ -98,11 +97,20 @@ export default function Checkout() {
           <React.Fragment>
             {activeStep === steps.length ? (
               <React.Fragment>
+                <h2>Tus fotos han sido almacenadas.</h2>
+                <h5>
+                  Ahora puedes notificar al inquilino para que autorice las
+                  fotos o agregue más con este enlace:
+                  https://morada-uno.web.app/
+                </h5>
                 <button
-                  color="primary"
-                  className="goToNew"
-                  onClick={goToMain}
+                  onClick={() =>
+                    navigator.clipboard.writeText("Ahora puedes notificar al inquilino para que autorice las fotos o agregue más con este enlace:https://morada-uno.web.app/")
+                  }
                 >
+                  Copy
+                </button>
+                <button color="primary" className="goToNew" onClick={goToMain}>
                   Regresar al menú principal
                 </button>
               </React.Fragment>
