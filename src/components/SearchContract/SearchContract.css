@@ -1,0 +1,50 @@
+.tituloInput{
+    /* margin: 0, 0, 10px, 0;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-align:center; */
+    
+    font-family: M PLUS 1;
+font-style: normal;
+font-size: 1.2em;
+color: #424242;
+text-align:center;  
+font-weight: bold;
+}
+.buttonGuardar{
+    border: 1px solid #ccc;
+    padding: 6px 12px;
+    cursor: pointer;
+    color: #FFFFFF;
+    background: #7E288B;
+border-radius: 4px;
+ margin-top: 2em;
+ margin-right: 23%;
+    
+   
+}
+.infoCasa{
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+.infoCasa__text{
+    font-size: .9em;
+    line-height: normal;
+}
+.buttons{
+    display: flex;
+    justify-content: flex-end;
+    
+   
+}
+#numContrato{
+    width:90%;
+    margin-left:5%;
+
+}
+@media screen and (max-width: 800px){
+    .buttonGuardar{
+        margin-right: 18%;
+    }
+  
+   }
