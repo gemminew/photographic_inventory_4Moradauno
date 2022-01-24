@@ -33,10 +33,10 @@ export default function LabelBottomNavigation() {
   };
 
   return (
-    <Typography   sx={{ width: 500 }} color="text.secondary" >
+    <Typography  sx={{ width: 500 }} color="text.secondary">
     <ThemeProvider theme={theme}>
-    <BottomNavigation   color= "secondary" value={value}  onChange={handleChange}>
-      <BottomNavigationAction
+    <BottomNavigation color= "secondary" value={value}  onChange={handleChange}>
+      <BottomNavigationAction 
         color= "secondary"
         label="Fachada"
         value="Fachada"
