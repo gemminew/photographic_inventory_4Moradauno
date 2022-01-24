@@ -12,6 +12,16 @@
     height: 40px;
     width: 280px;
     margin-left: 50px;
+}
+.header__celular{
+    height: 40px;
+    width: 40px;
+    margin-left: 50px;
+}
+.header__{
+    height: 40px;
+    width: 40px;
+
 }   
 
 .header__logout{
@@ -22,23 +32,21 @@
     border-radius: 30px;
     border: 3px solid #1ABBBF;
     color: aquamarine;
-    /* font-weight: bold; */
-    color:#1ABBBF;
-    font-size: 20px;
-    font-family: 'M PLUS 1p', sans-serif;
+    font-weight: bold;
 }
-
-@media screen and (max-width: 800px){
-    .header__logout{
-      height: 40%;
-      width: 35%;
-      margin-top: -10%;
-      font-size:15px;
-      margin-top: 3%;
-      margin-right: 3%;
+@media (orientation: portrait) {
+    .header__logo {
+           display: none;
+        }
+    .header__celular {
+           display: block;
+        }
     }
-    .header__logo{
-        width:50%;
-        margin-left:5% ;
-      }
-}
+    @media screen and (min-width:522px){
+        .header__logo {
+               display: block;
+            }
+        .header__celular {
+               display: none;
+            }
+        }

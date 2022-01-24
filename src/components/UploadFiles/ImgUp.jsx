@@ -70,11 +70,11 @@ export default function ImgUp () {
 
   return (
     <div id = "div2">
-        <h1 id='categoria'>{seccion} </h1>
+        <h6 id='categoria'>{seccion} </h6>
         <LabelBottomNavigation/>
         <form onSubmit={añadirFotosApropiedad}>
             <p id='imagenes'> Sube imágenes y comentarios </p>
-            <label htmlFor="file-upload" class="custom-file-upload">Subir Imagenes</label>
+            <label id='isubir' htmlFor="file-upload" class="custom-file-upload">Subir Imagenes</label>
             <input  type="file" id="file-upload" accept='image/*' multiple onChange={fileHandler}></input>
             <p id='comentarios'> Comentarios </p>
             <input id='placeComent' type="text" placeholder='Agrega aqui tu comentario' />
