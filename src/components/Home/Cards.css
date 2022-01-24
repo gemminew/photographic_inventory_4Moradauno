@@ -7,9 +7,7 @@ img{
     width: 20px;
 }
 .image{
-    object-fit: fill;
-    height:100%;
-    width: -webkit-fill-available;  
+    width: 40%;
 }
 .up{
     flex-direction: column;
