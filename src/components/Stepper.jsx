@@ -18,12 +18,21 @@ import SearchContract from "./SearchContract/SearchContract";
 import UploadFiles from "./UploadFiles/UploadFiles";
 import RenderArchives from "./RenderArchives/RenderArchives";
 import { useNavigate } from "react-router-dom";
-
 import { FilesContext } from "../context/filesContext";
+
+const theme = createTheme({
+  palette:{
+    primary:{
+      main:'#FF7457'},
+    secondary:{
+      main:'#263238'
+    },
+  }
+})
 
 function Copyright() {
   return (
-    <Typography variant="body2" color="text.secondary" align="center">
+    <Typography variant="body2" color="text.primary" align="center">
       {"Copyright © "}
       <Link color="inherit" href="https://mui.com/">
         Your Website
@@ -49,7 +58,7 @@ function getStepContent(step) {
   }
 }
 
-const theme = createTheme();
+
 
 export default function Checkout() {
   const [activeStep, setActiveStep] = React.useState(0);
@@ -72,7 +81,7 @@ export default function Checkout() {
       <CssBaseline />
       <AppBar
         position="absolute"
-        color="default"
+        color="secondary"
         elevation={0}
         sx={{
           position: "relative",
@@ -84,10 +93,10 @@ export default function Checkout() {
           variant="outlined"
           sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}
         >
-          <Typography component="h1" variant="h4" align="center">
+          <Typography color= "secondary" component="h1" variant="h4" align="center">
             Inventario fotográfico
           </Typography>
-          <Stepper activeStep={activeStep} sx={{ pt: 3, pb: 5 }}>
+          <Stepper  color= "secondary" activeStep={activeStep} sx={{ pt: 3, pb: 5 }}>
             {steps.map((label) => (
               <Step key={label}>
                 <StepLabel>{label}</StepLabel>
