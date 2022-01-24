@@ -1,6 +1,17 @@
-import React, { useState, useContext } from "react";
+import * as React from 'react';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import CssBaseline from '@mui/material/CssBaseline';
+import TextField from '@mui/material/TextField';
+import Link from '@mui/material/Link';
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useState, useContext } from "react";
 //import { useNavigate } from "react-router-dom";
-import '../Login/Login.css'
 import {
   signInWithEmailAndPassword,
   onAuthStateChanged,
@@ -11,8 +22,17 @@ import { FilesContext } from "../../context/filesContext";
 import Checkout from "../Stepper"
 
 
-const Login = () => {
 
+const theme = createTheme({
+  palette:{
+    primary:{
+      main:'#5A1A6A'},
+    secondary:{
+      main:'#ff7457'},
+  },
+});
+
+export default function Login() {
   const {user, setUser, email, setEmail, password, setPassword} = useContext(FilesContext);
 
 
@@ -30,34 +50,81 @@ const Login = () => {
     }
   };
 
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    // eslint-disable-next-line no-console
+    console.log({
+      email: data.get('email'),
+      password: data.get('password'),
+    });
+  };
+
   return (
-    <div className ='login-container'  >
-      <div className ='login-title'>
-        <h1> Ingresa aqui </h1>
-    <form className="login-form" action="">
-      <h2 >Correo Electronico</h2>
-      <input type="text"  placeholder="ej. example@gmail.com"
-                onChange={(event) => {
-                  setEmail(event.target.value);
-                  console.log(email)
-                }}/>
-      <h2 className ="text-login" > Contraseña </h2>
-     <input className ="input-login" id="contraseña" type="password" name="password" placeholder="**********"
-               onChange={(event) => {
-                setPassword(event.target.value);
-              
-              }}
-     />
-      <button onClick={login}> Iniciar Sesion </button>
+    <ThemeProvider theme={theme}>
+      <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <Box
+          sx={{
+            marginTop: 8,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+            Ingresa a tu cuenta
+          </Typography>
+          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+            <Grid container spacing={2}>
 
-     
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  id="email"
+                  label="Correo electrónico"
+                  name="email"
+                  autoComplete="email"
+                  onChange={(event) => {
+                    setEmail(event.target.value);
+                    console.log(email)
+                  }}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  name="password"
+                  label="Contraseña"
+                  type="password"
+                  id="password"
+                  autoComplete="new-password"
+                  onChange={(event) => {
+                    setPassword(event.target.value);
+                  
+                  }}
+                />
+              </Grid>
+            </Grid>
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+              onClick={login}
+            >
+              Iniciar Sesión
+            </Button>
 
-      
-      </form>
-    </div>
-    </div>
+          </Box>
+        </Box>
+      </Container>
+    </ThemeProvider>
   );
 }
-
-export default Login;
-
