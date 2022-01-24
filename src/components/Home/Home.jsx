@@ -27,7 +27,7 @@ function Home() {
     useEffect(() => {
         async function fetchCasas(){
             let array = []
-            for (let index = 0; index < propiedades.length; index++) {
+            for (let index = 0; index < propiedades?.length; index++) {
                 const element = propiedades[index];
                 const datosCasa = await getInfo("contratos", element)
                 array.push(datosCasa)
@@ -35,7 +35,7 @@ function Home() {
             setInfoPropiedad(array)
         }
         fetchCasas()
-    }, [propiedades])
+    }, [propiedades, getInfo])
     
 
     console.log(infoPropiedad)
