@@ -39,27 +39,18 @@ export default function SearchContract() {
     } else {
       setPropiedadQueSubeFotos(numero)
     }
-
-
-
-
-/* const docuRef = doc(firestore, `contratos/${propiedadQueSubeFotos}`)
-await updateDoc(docuRef, nuevoArrayPropiedad)
-    e.target.numContrato.value = ""
-    e.target.nombreCasa.value = "" */
   }
 
   useEffect(() => {
     async function fetchInfoPropiedad() {
         const setearPropiedadInfo = await getInfo("contratos", propiedadQueSubeFotos)
-       
         setInfoPropiedad(setearPropiedadInfo)
         setCasa(setearPropiedadInfo?.alias_casa)
         setContrato(setearPropiedadInfo?.numero_contrato)
     }
     fetchInfoPropiedad()
   
-  }, [getInfo]) 
+  }, [casa, getInfo, propiedadQueSubeFotos, setInfoPropiedad]) 
 
 
   

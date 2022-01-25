@@ -28,9 +28,6 @@ function App() {
         <Routes>
         <Route path="/" element={<Main/>} />
         <Route path="/section" element={<Stepper/> } />
-        <Route path="/search" element={<SearchContract/> } />
-        <Route path="/upload" element={<UploadFiles/> } />
-        <Route path="/render" element={<RenderArchives/> } />
         </Routes>
         <Footer/>
       </FilesProvider>
