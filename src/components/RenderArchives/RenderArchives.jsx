@@ -5,7 +5,8 @@ import Box from '@mui/material/Box';
 import PropTypes from 'prop-types';
 import Typography from '@mui/material/Typography';
 import { FilesContext } from "../../context/filesContext";
-import ImgUp from "../UploadFiles/ImgUp";
+import {updateDoc, doc} from 'firebase/firestore'
+import {firestore} from '../../Firebase/config'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -40,24 +41,41 @@ function a11yProps(index) {
   };
 }
 
-
 export default function RenderArchives() {
    
   const { 
-    infoSeccion, 
-    setInfoSeccion, 
-    infoPropiedad 
-  } = useContext(FilesContext)
+      infoUser,
+      user,
+      infoPropiedad,
+      setInfoPropiedad,
+      propiedadQueSubeFotos,
+      getInfo 
+    } = useContext(FilesContext)
 
+
+  const [infoSeccion, setInfoseccion] = React.useState([]);
   const [value, setValue] = React.useState(0);
+  const [mensaje, setMensaje] = React.useState()
 
+ 
   const secciones = ["fotos_fachada", "fotos_recamara", "fotos_baño", "fotos_cocina", "fotos_sala", "fotos_otros"]
-
+  
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
-   useEffect(() => {
+ useEffect(() => {
+    async function actualizarDatosPropiedad(){
+      const actualizar = await getInfo("contratos", propiedadQueSubeFotos)
+      setInfoPropiedad(actualizar)
+    }
+    actualizarDatosPropiedad()
+  }, []);   
+
+
+
+    useEffect(() => {
+
     let arraysecciones = []
     for (let index = 0; index < secciones.length; index++) {
       const element = secciones[index];
@@ -69,11 +87,20 @@ export default function RenderArchives() {
         }
       })
     }
-        
-    setInfoSeccion(arraysecciones) 
-  }, []); 
-     
-  
+    console.log(arraysecciones)
+    setInfoseccion(arraysecciones) 
+  }, []);  
+
+  function handleAceptar (){
+    
+    const docuRef = doc(firestore, `contratos/${propiedadQueSubeFotos}`)
+    updateDoc(docuRef, {
+      [infoUser?.rol]: {
+        aprobacion_fotografias: true,
+        usuario: user?.email
+      }
+    }) 
+  }
  
   return (
     <>
@@ -117,6 +144,19 @@ export default function RenderArchives() {
         })
       }
     </div>
+    <div>
+      {infoPropiedad.inquilino.aprobacion_fotografias === true && infoPropiedad.broker.aprobacion_fotografias === true ? 
+      <p>El contrato está listo para la firma, manda un mensaje al inquilino https://morada-uno.web.app/</p> :
+        <>
+        <p>¿Aceptas las fotografias de la propiedad?</p>
+      <button onClick={handleAceptar}>boton</button>
+        </>
+      
+      
+      }
+
+      
+    </div>
     </TabPanel>
     <TabPanel value={value} index={1}>
     </TabPanel>
@@ -124,5 +164,3 @@ export default function RenderArchives() {
     </>
   );
 }
-
-
