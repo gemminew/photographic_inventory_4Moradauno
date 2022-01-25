@@ -35,7 +35,7 @@ function Home() {
             setInfoPropiedad(array)
         }
         fetchCasas()
-    }, [propiedades, getInfo])
+    }, [getInfo])
     
 
     console.log(infoPropiedad)

@@ -76,6 +76,7 @@ export default function Checkout() {
     navigate("/");
   };
 
+  console.log("steper")
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />

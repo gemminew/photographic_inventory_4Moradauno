@@ -8,7 +8,6 @@ import Box from '@mui/material/Box';
 import Home from './Home'
 import './BrokerHome.css'
 import MediaControlCard from './Cards';
-import SearchContract from '../../components/SearchContract/SearchContract';
 import { useNavigate } from "react-router-dom";
 import { FilesContext } from '../../context/filesContext'
 import sinFotoFachada from '../../Assets/no-propertyfound.png'
@@ -97,7 +96,7 @@ export default function BasicTabs() {
     fetchPropiedades(propiedadesRentadas, setPropiedadesRentadasInfo)
     fetchPropiedades(propiedadesEnProceso, setPropiedadesEnProcesoInfo)
 
-  },[getInfo, propiedadesRentadas, propiedadesEnProceso])
+  },[getInfo])
 
 
   useEffect(() => {
