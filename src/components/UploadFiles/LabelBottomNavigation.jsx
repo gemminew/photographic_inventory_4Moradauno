@@ -39,37 +39,37 @@ export default function LabelBottomNavigation() {
       <BottomNavigationAction 
         color= "secondary"
         label="Fachada"
-        value="Fachada"
+        value="fachada"
         icon={<HomeIcon />}
       />
       <BottomNavigationAction 
     
         label="Recamara"
-        value="Recamara"
+        value="recamara"
         icon={<BedIcon />}
       />
       <BottomNavigationAction
      
         label="Baño"
-        value="Baño"
+        value="baño"
         icon={<WcIcon />}
       />
       <BottomNavigationAction
    
         label="Cocina"
-        value="Cocina"
+        value="cocina"
         icon={<BlenderIcon />}
       />
       <BottomNavigationAction
     
         label="Sala"
-        value="Sala"
+        value="sala"
         icon={<WeekendIcon />}
       />
       <BottomNavigationAction 
       
         label="Otros"
-        value="Otros" 
+        value="otros" 
         icon={<GrassIcon/>} />
     </BottomNavigation>
     </ThemeProvider>

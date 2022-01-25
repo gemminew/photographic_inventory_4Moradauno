@@ -18,7 +18,7 @@ font-weight: bold;
     background: #7E288B;
 border-radius: 4px;
  margin-top: 2em;
- margin-right: 23%;
+
     
    
 }
@@ -32,18 +32,10 @@ border-radius: 4px;
 }
 .buttons{
     display: flex;
-    justify-content: flex-end;
-    
-   
+    justify-content: center;
 }
 #numContrato{
     width:90%;
     margin-left:5%;
 
 }
-@media screen and (max-width: 800px){
-    .buttonGuardar{
-        margin-right: 18%;
-    }
-  
-   }

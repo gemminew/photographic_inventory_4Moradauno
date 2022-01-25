@@ -50,7 +50,7 @@ export default function SearchContract() {
     }
     fetchInfoPropiedad()
   
-  }, [casa, getInfo, propiedadQueSubeFotos, setInfoPropiedad]) 
+  }, []) 
 
 
   
@@ -62,7 +62,6 @@ export default function SearchContract() {
         <input id='numContrato' type="text" placeholder='123' required/>
         <br/>
         <div className='buttons'>
-        <button type='submit' className="buttonGuardar">Buscar</button>
         <button type='submit' className="buttonGuardar">Guardar</button>
         </div>
       </form>
