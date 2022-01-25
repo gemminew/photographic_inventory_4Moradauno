@@ -50,7 +50,7 @@ export default function SearchContract() {
     }
     fetchInfoPropiedad()
   
-  }, []) 
+  }, [casa, getInfo, propiedadQueSubeFotos, setInfoPropiedad]) 
 
 
   
