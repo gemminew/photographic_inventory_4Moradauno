@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {useContext, useEffect, useState} from 'react'
 import {FilesContext} from '../../context/filesContext'
-import {doc, updateDoc, onSnapshot} from 'firebase/firestore'
+import {doc, updateDoc} from 'firebase/firestore'
 import {firestore} from '../../Firebase/config'
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
@@ -29,31 +29,33 @@ export default function SearchContract() {
   const [casa, setCasa] = useState()
   const [contrato, setContrato] = useState("")
 
-  function añadirNumeroContrato(e){
+  async function añadirNumeroContrato(e){
     e.preventDefault()
     const numero = e.target.numContrato.value
     setPropiedadQueSubeFotos(numero)
     if(arrayNumerosContratos.includes(numero) === false){
       alert("ingrese un número de contrato válido por favor, el que ha ingresado no se encuentra en nuestra base de datos")
       setPropiedadQueSubeFotos(null)
-      
-    } 
-    
+    } else {
+      setPropiedadQueSubeFotos(numero)
+    }
   }
 
-
   useEffect(() => {
-    onSnapshot((firestore, "contratos", propiedadQueSubeFotos), (doc) => {
-      setInfoPropiedad(doc.data())
-      setCasa(doc.data().alias_casa)
-      setContrato(doc.data().numero_contrato)
-      })
-  }, []);
- console.log("searContract")
-      
+    async function fetchInfoPropiedad() {
+        const setearPropiedadInfo = await getInfo("contratos", propiedadQueSubeFotos)
+        setInfoPropiedad(setearPropiedadInfo)
+        setCasa(setearPropiedadInfo?.alias_casa)
+        setContrato(setearPropiedadInfo?.numero_contrato)
+    }
+    fetchInfoPropiedad()
+  
+  }, [casa, getInfo, propiedadQueSubeFotos, setInfoPropiedad]) 
 
 
+  
   return (
+    
     <React.Fragment>
       <form className='formBusqueda' onSubmit={añadirNumeroContrato}>
         <p className='tituloInput'> Número de contrato </p>
@@ -61,6 +63,7 @@ export default function SearchContract() {
         <br/>
         <div className='buttons'>
         <button type='submit' className="buttonGuardar">Buscar</button>
+        <button type='submit' className="buttonGuardar">Guardar</button>
         </div>
       </form>
       <div className='infoCasa'>
@@ -68,6 +71,7 @@ export default function SearchContract() {
         <p className='infoCasa__text'>{contrato === undefined ? "" : `No. contrato ${contrato}`}</p>
       </div>
       <ModalInstructivo></ModalInstructivo>
+      
     </React.Fragment>
   );
 }

@@ -23,7 +23,7 @@ import { FilesContext } from "../context/filesContext";
 const theme = createTheme({
   palette:{
     primary:{
-      main:'#FF7457'},
+      main:'#1ABBBF'},
     secondary:{
       main:'#263238'
     },
