@@ -144,12 +144,12 @@ export default function RenderArchives() {
         })
       }
     </div>
-    <div>
+    <div className='divAceptar'>
       {infoPropiedad.inquilino.aprobacion_fotografias === true && infoPropiedad.broker.aprobacion_fotografias === true ? 
-      <p>El contrato está listo para la firma, manda un mensaje al inquilino https://morada-uno.web.app/</p> :
+      <p style={{marginTop: "30px", fontSize: "20px"}}>El contrato está listo para la firma, manda un mensaje al inquilino https://morada-uno.web.app/</p> :
         <>
-        <p>¿Aceptas las fotografias de la propiedad?</p>
-      <button onClick={handleAceptar}>boton</button>
+        <p style={{marginTop: "30px", fontSize: "20px"}}>¿Aceptas las fotografias de la propiedad?</p>
+      <button className='buttonGuardar' onClick={handleAceptar}>Aceptar</button>
         </>
       
       

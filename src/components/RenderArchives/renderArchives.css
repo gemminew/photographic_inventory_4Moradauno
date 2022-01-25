@@ -57,6 +57,18 @@
      text-align: center;
      width: 195px;
 }
+.buttonGuardar{
+    border: 1px solid #ccc;
+    padding: 6px 12px;
+    cursor: pointer;
+    color: #FFFFFF;
+    background: #7E288B;
+border-radius: 4px;
+ margin-top: 2em; 
+}
+.divAceptar{
+    border: 1px solid purple;
+}
 @media (max-width: 600px) {
     .render-tittle {
       font-size: 10px;
