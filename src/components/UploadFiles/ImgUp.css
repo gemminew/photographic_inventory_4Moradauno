@@ -53,6 +53,15 @@ border-radius: 4px;
 border-radius: 4px;
  margin-top: 2em;
 }
+#copy{
+    border: 1px solid #ccc;
+    padding: 6px 12px;
+    cursor: pointer;
+    color: #FFFFFF;
+    background: #7E288B;
+border-radius: 4px;
+ margin-top: 2em;
+}
 #enviar{
     border: 1px solid #ccc;
     display: inline-block;

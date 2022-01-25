@@ -13,6 +13,11 @@
     width: 280px;
     margin-left: 50px;
 }   
+.header__celular{
+    height: 40px;
+    width: 40px;
+    margin-left: 50px;
+}  
 
 .header__logout{
     height: 50px;

@@ -35,7 +35,7 @@ function Copyright() {
     <Typography variant="body2" color="text.primary" align="center">
       {"Copyright © "}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        Morada Uno
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
@@ -112,7 +112,7 @@ export default function Checkout() {
                   fotos o agregue más con este enlace:
                   https://morada-uno.web.app/
                 </h5>
-                <button
+                <button id="copy"  border= "1px solid #ccc" padding="6px 12px" cursor="pointer"  color="#FFFFFF" background= "#7E288B" border-radius="4px"  margin-top="2em" 
                   onClick={() =>
                     navigator.clipboard.writeText("Ahora puedes notificar al inquilino para que autorice las fotos o agregue más con este enlace:https://morada-uno.web.app/")
                   }

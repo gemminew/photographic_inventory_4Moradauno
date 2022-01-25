@@ -23,6 +23,7 @@ const Header = () => {
   };
   return (
     <div className="header">
+      <img src={celular} alt="logo morada uno" className="header__celular"  onClick={goToMain}/>
       <img src={logo} alt="logo morada uno" className="header__logo"  onClick={goToMain}/>
       {user ? <button onClick={logout} className="header__logout"> Cerrar sesión </button> : null}
 
